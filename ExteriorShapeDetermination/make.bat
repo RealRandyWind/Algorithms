@@ -1,0 +1,1 @@
+cl /I ..\Core ESD.cpp /EHsc

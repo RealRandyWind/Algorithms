@@ -1,1 +1,0 @@
-cl /I ..\ ssco.cpp /EHsc
