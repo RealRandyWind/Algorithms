@@ -1,1 +1,1 @@
-cl /I ..\Core CompoundPathsTriangularization.cpp /EHsc\
+cl /I ..\Core CompoundPathsTriangularization.cpp /EHsc

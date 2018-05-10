@@ -1,1 +1,1 @@
-cl /I ..\Core RuntimeDLLReplacement.cpp /EHsc\
+cl /I ..\Core RuntimeDLLReplacement.cpp /EHsc

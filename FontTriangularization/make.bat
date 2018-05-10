@@ -1,1 +1,1 @@
-cl /I ..\Core FontTriangularization.cpp /EHsc\
+cl /I ..\Core FontTriangularization.cpp /EHsc

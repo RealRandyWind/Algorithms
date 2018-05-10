@@ -1,5 +1,4 @@
-#ifndef MODEL_HPP
-#define MODEL_HPP
+#pragma once
 
 #include <Types>
 #include <Point>
@@ -40,5 +39,3 @@ struct TModel
 	virtual FVoid Optimize(TIterator<FSample>, TypeParameters) = 0;
 	virtual FVoid Optimize(TypeParameters) = 0;
 };
-
-#endif

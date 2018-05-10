@@ -1,5 +1,4 @@
-#ifndef PROCEDURE_HPP
-#define PROCEDURE_HPP
+#pragma once
 
 #include <Types>
 #include <Iterator>
@@ -10,5 +9,3 @@ struct TProcedure
 {
 	virtual FVoid Use(TIterator<TypeInput>, TData<TypeResult> &, TypeParameters) = 0;
 };
-
-#endif

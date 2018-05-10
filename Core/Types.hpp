@@ -1,5 +1,4 @@
-#ifndef TYPES_HPP
-#define TYPES_HPP
+#pragma once
 
 #include <cstdlib>
 #include <cstdint>
@@ -23,15 +22,13 @@ using FSize = size_t;
 using FBool = bool;
 using FNatural = unsigned int;
 using FInteger = int;
-using FReturn = int;
+using FReturn = decltype(EXIT_SUCCESS);
+using FVoid = void;
 
-using NullPtr = decltype(nullptr); 
-using NullStr = decltype("");
-using NullChr = decltype('\0');
-using True = decltype(true);
-using False = decltype(false);
-
-static const FReturn Success = EXIT_SUCCESS;
-static const FReturn Failure = EXIT_FAILURE;
-
-#endif
+static const decltype("") NullStr = "";
+static const decltype('\0') NullChr = '\0';
+static const decltype(true) True = true;
+static const decltype(false) Fasle = false;
+static const decltype(nullptr) NullPtr = nullptr;
+static const decltype(EXIT_SUCCESS) Success = EXIT_SUCCESS;
+static const decltype(EXIT_FAILURE) Failure = EXIT_FAILURE;

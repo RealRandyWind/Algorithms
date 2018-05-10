@@ -1,5 +1,4 @@
-#ifndef FUNCTIONS_HPP
-#define FUNCTIONS_HPP
+#pragma once
 
 #include <stdlib.h>
 #include <Types>
@@ -58,5 +57,3 @@ inline Type * Remove(Type *Data)
 	free(Data);
 	return NullPtr;
 };
-
-#endif

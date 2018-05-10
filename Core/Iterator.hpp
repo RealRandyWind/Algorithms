@@ -1,5 +1,4 @@
-#ifndef ITERATOR_HPP
-#define ITERATOR_HPP
+#pragma once
 
 #include <Types>
 
@@ -44,5 +43,3 @@ struct TIterator
 		return Data[Index];
 	};
 };
-
-#endif

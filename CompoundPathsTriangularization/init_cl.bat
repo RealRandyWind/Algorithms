@@ -1,1 +1,1 @@
-"%VCINSTALLDIR%Auxiliary\Build\vcvarsall\" %1
+"%VCINSTALLDIR%Auxiliary\Build\vcvarsall" %1

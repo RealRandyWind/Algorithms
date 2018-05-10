@@ -1,5 +1,4 @@
-#ifndef BYTE_HPP
-#define BYTE_HPP
+#pragma once
 
 #include <Types>
 #include <Functions>
@@ -115,5 +114,3 @@ inline FBool operator!(const TByte<SizeBytes> &Rhs)
 	}
 	return True;
 };
-
-#endif

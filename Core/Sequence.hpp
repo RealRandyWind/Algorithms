@@ -1,5 +1,4 @@
-#ifndef SEQUENCE_HPP
-#define SEQUENCE_HPP
+#pragma once
 
 #include <Types>
 #include <Functions>
@@ -67,5 +66,3 @@ struct TSequence
 		return It;
 	};
 };
-
-#endif

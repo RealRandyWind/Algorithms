@@ -1,5 +1,4 @@
-#ifndef POINT_HPP
-#define POINT_HPP
+#pragma once
 
 #include <Types>
 #include <Iterator>
@@ -38,5 +37,3 @@ struct TData
 		return It;
 	};
 };
-
-#endif

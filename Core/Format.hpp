@@ -1,7 +1,4 @@
-#ifndef FORMAT_HPP
-#define FORMAT_HPP
+#pragma once
 
 #include <Types>
 #include <Functions>
-
-#endif
