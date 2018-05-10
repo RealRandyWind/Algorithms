@@ -6,9 +6,6 @@
 #include <fstream>
 #include <initializer_list>
 
-#define Success EXIT_SUCCESS
-#define Failure EXIT_FAILURE
-
 template<typename TypeElement>
 using TListInitializer = std::initializer_list<TypeElement>;
 
@@ -33,5 +30,8 @@ using NullStr = decltype("");
 using NullChr = decltype('\0');
 using True = decltype(true);
 using False = decltype(false);
+
+static const FReturn Success = EXIT_SUCCESS;
+static const FReturn Failure = EXIT_FAILURE;
 
 #endif

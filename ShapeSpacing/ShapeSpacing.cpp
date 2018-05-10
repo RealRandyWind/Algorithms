@@ -1,6 +1,12 @@
 #include <Types>
 
-FReturn main()
+FReturn main(FVoid)
 {
+	check();
 	return Success;
+}
+
+FBool check(FVoid)
+{
+	return True;
 }
