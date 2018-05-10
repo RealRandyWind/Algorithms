@@ -520,157 +520,10 @@
 	"buffers":
 	[
 		{
-			"contents": "ch 1. 1, 2 ,3 ,4, 5, 7\n\nch 2. 1 ,2 ,3 5\n\nch 3. 3, 4\n\nch 4. 1 ,2 ,3 ,4 ,5\n\nch 6. 1, 2, 3, 4.1\n\nch 9. 1, 2\n\nch 16. 1, 2, 3, 5\n\nch 17. 1, 2, 3,\n\nRabbit MQ, UML, API, RESTFUL, REST, GIEPU, Block Chain",
-			"settings":
-			{
-				"buffer_size": 196,
-				"line_ending": "Windows",
-				"name": "ch 1. 1, 2 ,3 ,4, 5, 7"
-			}
-		},
-		{
-			"file": "Core/Formats/Default.hpp",
-			"settings":
-			{
-				"buffer_size": 114,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Core/Sequence.hpp",
-			"settings":
-			{
-				"buffer_size": 1090,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "enum class EPathOperation\n{\n\tUnion,\n\tExclusion,\n\t_Size\n};\n\ntemplate<typename TypeElement>\nstruct TSequence\n{\n\tFSize _Size;\n\tTypeElement *Data;\n\t\n\tFSize Size()\n\t{\n\t\treturn _Size;\n\t};\n\t\n\tconst FSize Size()\n\t{\n\t\treturn _Size;\n\t};\n};\n\nstruct FPoint\n{\n\tFReal X, Y;\n};\n\nstruct FTriangle\n{\n\tFPoint P0, P1, P2;\n};\n\nstruct FPath\n{\n\tEPathOperation Operation;\n\tFPoints Points;\n};",
-			"file": "/D/Online/Dropbox/Temp/SchutCode.hpp",
-			"file_size": 497,
-			"file_write_time": 131690522340000000,
-			"settings":
-			{
-				"buffer_size": 368,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "Core/Types.hpp",
 			"settings":
 			{
-				"buffer_size": 813,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Algorithms.sublime-project",
-			"settings":
-			{
-				"buffer_size": 45,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#include <Types>\n#include <Model>\n#include <Data>\n\nconst TSequence<TReal> CrossValidation = {0.7, 0.2, 0.1};\n\nconst FSize FeatureCount = 30;\nconst FSize LabelCount = 30;\n\nstruct FParameters\n{\n\tFReal Alpha;\n};\n\nusing FModel = TModel<FeatureCount, LabelCount, FParameters>;\n\nstruct FPrototype\n{\n\tFModel::Feature Mu, Omega;\n\tFReal W0, W1;\n\tFSize ID, _K;\n};\n\nFReturn main()\n{\n\tFParameters Parameters;\n\tFModel:FPerformence BeforOptimize, AfterOptimize;\n\tTData<FModel::FLabel> Labels;\n\t\n\tTData<FModel::FSample> Samples(\"Model.Samples\");\n\tTData<FModel::FFeature> Features(\"Model.Features\");\n\tFModel Model(\"SMDLVQ.Model\");\n\n\tauto Partitions = Samples.Partition(CrossValidation);\n\t\n\tModel.Train(Partitions[0], Parameters);\n\tModel.Validate(Partitions[1], &BeforOptimize, Parameters);\n\tModel.Optimize(Partitions[2], Parameters);\n\tModel.Validate(Partitions[1], &AfterOptimize, Parameters);\n\n\tModel.Use(Features, &Labels, Parameters);\n\n\treturn Success;\n}",
-			"file": "SMLVQDynamicPrototyping/SMDLVQ.cpp",
-			"file_size": 982,
-			"file_write_time": 131696753464713039,
-			"settings":
-			{
-				"buffer_size": 941,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ShapeSpacing/make.bat",
-			"settings":
-			{
-				"buffer_size": 36,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ShapeSimplification/make.bat",
-			"settings":
-			{
-				"buffer_size": 43,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ProbeMovementOptimizerSSC/make.bat",
-			"settings":
-			{
-				"buffer_size": 49,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "FlowOfInterest/make.bat",
-			"settings":
-			{
-				"buffer_size": 38,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "ExteriorShapeDetermination/make.bat",
-			"settings":
-			{
-				"buffer_size": 50,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CompoundTypeExtraction/make.bat",
-			"settings":
-			{
-				"buffer_size": 46,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CellTypeExtraction/make.bat",
-			"settings":
-			{
-				"buffer_size": 42,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CellTracing/make.bat",
-			"settings":
-			{
-				"buffer_size": 35,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CellIdentification/make.bat",
-			"settings":
-			{
-				"buffer_size": 42,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CellCompoundInteractionSignature/make.bat",
-			"settings":
-			{
-				"buffer_size": 56,
+				"buffer_size": 845,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -685,113 +538,18 @@
 			}
 		},
 		{
+			"file": "ShapeSpacing/make.bat",
+			"settings":
+			{
+				"buffer_size": 36,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "ShapeSpacing/ShapeSpacing.cpp",
 			"settings":
 			{
-				"buffer_size": 53,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mkprj.bat",
-			"settings":
-			{
-				"buffer_size": 146,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "TestProject/TestProject.cpp",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "TestProject/make.bat",
-			"settings":
-			{
-				"buffer_size": 37,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "TestProject/init_cl.bat",
-			"settings":
-			{
-				"buffer_size": 46,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "TinyAgentHiveMind/make.bat",
-			"settings":
-			{
-				"buffer_size": 41,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "cl /I ..\\Core SMLVQDynamicPrototyping.cpp /EHsc\n",
-			"file": "SMLVQDynamicPrototyping/make.bat",
-			"file_size": 47,
-			"file_write_time": 131704332148164379,
-			"settings":
-			{
-				"buffer_size": 48,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "using FPoint = TPoint<2, FReal>;\nusing FTriangle = TPoint<9, FReal>;\n\nenum class EPathOperation\n{\n\tUnion,\n\tExclusion,\n\t_Size\n};\n\nstruct FPath\n{\n\tEPathOperation Operation;\n\tTSequence<FPoint> Points;\n};\n\nstruct FParameters\n{\n\tFReal ProbeRadius;\n\tFPoint ProbeStart;\n};\n\nstruct F2DTree\n{\n\tFPoint Position;\n\tFTriangle &Triangle;\n\tstruct F2DTree &XDim, &YDim;\n};\n\nusing FMovement = TSequence<FPoint>;\nusing FShape = TSequence<FPath>;\nusing FProcedure = TProcedure<FShape, FMovement, FParameters>;\n\nFReturn main()\n{\n\tFParameters Parameters;\n\tTData<FMovement> Movements;\n\n\tTData<FShape> Shapes(\"Shapes.Data\");\n\tFProcedure Procedure();\n\n\tProcedure.Use(Shapes, &Movements, Parameters);\n\n\treturn Success;\n}",
-			"file": "ProbeMovementOptimizerSSC/PSCMO.cpp",
-			"file_size": 739,
-			"file_write_time": 131702902258517274,
-			"settings":
-			{
-				"buffer_size": 695,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "NetComputationalGraph/make.bat",
-			"settings":
-			{
-				"buffer_size": 83,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Core/Procedure",
-			"settings":
-			{
-				"buffer_size": 24,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "#ifndef PROCEDURE_HPP\n#define PROCEDURE_HPP\n\n#include <Types>\n#include <Iterator>\n#include <Data>\n\ntemplate<typename TypeInput, typename TypeResult, typename TypeParameters>\nstruct TProcedure\n{\n\tvirtual FVoid Use(TIterator<TypeInput>, TData<TypeResult> &, TypeParameters) = 0;\n};\n\n#endif",
-			"file": "Core/Procedure.hpp",
-			"file_size": 299,
-			"file_write_time": 131696756209333161,
-			"settings":
-			{
-				"buffer_size": 287,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Core/Model.hpp",
-			"settings":
-			{
-				"buffer_size": 880,
+				"buffer_size": 106,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -834,12 +592,40 @@
 	"expanded_folders":
 	[
 		"/D/Repositories/Algorithms",
-		"/D/Repositories/Algorithms/ShapeSimplification",
-		"/D/Repositories/Algorithms/TestProject",
+		"/D/Repositories/Algorithms/Core",
+		"/D/Repositories/Algorithms/ShapeSpacing",
+		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping",
 		"/D/Repositories/Algorithms/TinyAgentHiveMind"
 	],
 	"file_history":
 	[
+		"/D/Repositories/Algorithms/Core/Formats/Default.hpp",
+		"/D/Repositories/Algorithms/Core/Sequence.hpp",
+		"/D/Online/Dropbox/Temp/SchutCode.hpp",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/PSCMO.cpp",
+		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/make.bat",
+		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/SMDLVQ.cpp",
+		"/D/Repositories/Algorithms/ShapeSpacing/make.bat",
+		"/D/Repositories/Algorithms/ShapeSimplification/make.bat",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/make.bat",
+		"/D/Repositories/Algorithms/FlowOfInterest/make.bat",
+		"/D/Repositories/Algorithms/ExteriorShapeDetermination/make.bat",
+		"/D/Repositories/Algorithms/CompoundTypeExtraction/make.bat",
+		"/D/Repositories/Algorithms/CellTypeExtraction/make.bat",
+		"/D/Repositories/Algorithms/CellTracing/make.bat",
+		"/D/Repositories/Algorithms/CellIdentification/make.bat",
+		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/make.bat",
+		"/D/Repositories/Algorithms/ShapeSpacing/init_cl.bat",
+		"/D/Repositories/Algorithms/ShapeSpacing/ShapeSpacing.cpp",
+		"/D/Repositories/Algorithms/mkprj.bat",
+		"/D/Repositories/Algorithms/CompoundPathsTriangularization/CompoundPathsTriangularization.cpp",
+		"/D/Repositories/Algorithms/TinyAgentHiveMind/make.bat",
+		"/D/Repositories/Algorithms/Core/Procedure",
+		"/D/Repositories/Algorithms/Core/Procedure.hpp",
+		"/D/Repositories/Algorithms/Core/Model.hpp",
+		"/D/Repositories/Algorithms/NetComputationalGraph/make.bat",
+		"/D/Repositories/Algorithms/TestProject/init_cl.bat",
+		"/D/Repositories/Algorithms/TestProject/TestProject.cpp",
 		"/D/Repositories/Algorithms/Core/String.hpp",
 		"/D/Repositories/Algorithms/Core/Types.hpp",
 		"/D/Repositories/Algorithms/NetComputationalGraph/NCG.cpp",
@@ -851,10 +637,7 @@
 		"/D/Repositories/Algorithms/Core/Format.hpp",
 		"/D/Repositories/Algorithms/Core/Formats/Tiff.hpp",
 		"/D/Repositories/Algorithms/Core/Formats/Default",
-		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/SMDLVQ.cpp",
-		"/D/Repositories/Algorithms/Core/Model.hpp",
 		"/D/Repositories/Algorithms/Core/Iterator.hpp",
-		"/D/Repositories/Algorithms/Core/Sequence.hpp",
 		"/D/Repositories/Algorithms/Core/Resolver.hpp",
 		"/D/Repositories/Algorithms/Core/Constants.hpp",
 		"/D/Repositories/Algorithms/Core/core.hpp",
@@ -870,14 +653,9 @@
 		"/D/Repositories/Algorithms/Core/Types",
 		"/D/Repositories/Algorithms/Core/String",
 		"/D/Repositories/Algorithms/Core/Point",
-		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/PSCMO.cpp",
-		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/make.bat",
 		"/D/Repositories/Algorithms/formats/Tiff",
 		"/D/Repositories/Algorithms/Core/Byte",
-		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/make.bat",
-		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/make.bat",
 		"/D/Repositories/Algorithms/ExteriorShapeDetermination/ESD.cpp",
-		"/D/Repositories/Algorithms/ExteriorShapeDetermination/make.bat",
 		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/Makefile",
 		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/Makefile",
 		"/D/Repositories/Algorithms/ExteriorShapeDetermination/Makefile",
@@ -1177,138 +955,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								123,
-								123
-							]
-						],
-						"settings":
-						{
-							"auto_name": "ch 1. 1, 2 ,3 ,4, 5, 7",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Core/Formats/Default.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								100,
-								100
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Core/Sequence.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1090,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1079,
-								1079
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 78.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/Online/Dropbox/Temp/SchutCode.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 368,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								177,
-								177
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "Core/Types.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 813,
+						"buffer_size": 845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								731,
-								731
+								747,
+								747
 							]
 						],
 						"settings":
@@ -1316,357 +980,14 @@
 							"syntax": "Packages/C++11/C++11.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Algorithms.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 45,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 15,
-			"sheets":
-			[
-				{
-					"buffer": 6,
-					"file": "SMLVQDynamicPrototyping/SMDLVQ.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 941,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								605,
-								605
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "ShapeSpacing/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 36,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								26
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "ShapeSimplification/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33,
-								33
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "ProbeMovementOptimizerSSC/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 49,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								39,
-								39
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "FlowOfInterest/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 38,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								28,
-								28
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "ExteriorShapeDetermination/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 50,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								40,
-								40
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "CompoundTypeExtraction/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 46,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								36,
-								36
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "CellTypeExtraction/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "CellTracing/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 35,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								25,
-								25
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "CellIdentification/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "CellCompoundInteractionSignature/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 56,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
+					"buffer": 1,
 					"file": "ShapeSpacing/init_cl.bat",
 					"semi_transient": false,
 					"settings":
@@ -1690,53 +1011,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "ShapeSpacing/ShapeSpacing.cpp",
-					"semi_transient": false,
+					"buffer": 2,
+					"file": "ShapeSpacing/make.bat",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 53,
+						"buffer_size": 36,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "mkprj.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8,
-								8
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1749,287 +1041,39 @@
 					},
 					"stack_index": 3,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
-					"buffer": 20,
-					"file": "TestProject/TestProject.cpp",
+					"buffer": 3,
+					"file": "ShapeSpacing/ShapeSpacing.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 106,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								49,
+								49
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++11/C++11.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "TestProject/make.bat",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 37,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "TestProject/init_cl.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 46,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "TinyAgentHiveMind/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 41,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								31,
-								31
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "SMLVQDynamicPrototyping/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								48
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "ProbeMovementOptimizerSSC/PSCMO.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 695,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								353,
-								353
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "NetComputationalGraph/make.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 83,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								17
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 27,
-					"file": "Core/Procedure",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "Core/Procedure.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								227,
-								227
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "Core/Model.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 880,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								291,
-								291
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
 					"type": "text"
 				}
 			]
@@ -2054,21 +1098,21 @@
 				1
 			],
 			[
+				1,
 				0,
-				1,
-				1,
-				2
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.5,
 			1.0
 		]
 	},
