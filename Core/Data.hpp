@@ -2,7 +2,6 @@
 #define POINT_HPP
 
 #include <Types>
-#include <Constants>
 #include <Iterator>
 
 template<typename TypeData>
@@ -16,6 +15,13 @@ struct TData
 	inline FSize Size()
 	{
 		return _Size;
+	};
+
+	TIterator<FIterator> Partition(FSequence<FReal> Ratios, FSize BatchSize)
+	{
+		TIterator<FIterator> It;
+
+		return It;
 	};
 
 	TIterator<FIterator> Partition(FSequence<FReal> Ratios)

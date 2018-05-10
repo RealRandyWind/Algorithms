@@ -1,1 +1,1 @@
-cl /I ..\Core PSCMO.cpp /EHsc
+cl /I ..\Core ProbeMovementOptimizerSSC.cpp /EHsc

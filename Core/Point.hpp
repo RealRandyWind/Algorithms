@@ -2,7 +2,6 @@
 #define POINT_HPP
 
 #include <Types>
-#include <Constants>
 #include <Functions>
 
 template<FSize SizeData, typename TypeElement>

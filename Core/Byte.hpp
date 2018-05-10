@@ -2,10 +2,7 @@
 #define BYTE_HPP
 
 #include <Types>
-#include <Constants>
 #include <Functions>
-
-#define BITS_BYTE 8
 
 template<FSize SizeBytes>
 struct TByte

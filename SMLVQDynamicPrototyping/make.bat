@@ -1,1 +1,1 @@
-cl /I ..\Core SMDLVQ.cpp /EHsc
+cl /I ..\Core SMLVQDynamicPrototyping.cpp /EHsc

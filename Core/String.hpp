@@ -2,10 +2,9 @@
 #define POINT_HPP
 
 #include <Types>
-#include <Constants>
 #include <Functions>
 
-#define STRING_INIT_SIZE 8;
+static const FSize StringInitSize = 8;
 
 template<typename TypeSymbol>
 struct TString
@@ -46,28 +45,41 @@ struct TString
 		Rhs.Data = NullPtr;
 	};
 
-	/* init constructor */
+	template<typename TypeRhs>
+	TString(TListInitializer<TypeRhs> List) : TString()
+	{
+		Data = Make<TypeSymbol>(List.size());
+		for (auto Value : List)
+		{
+			Data[_Size] = static_cast<TypeSymbol>(Value);
+			++_Size;
+		}
+		_BufferSize = _Size;
+	};
+
+	/*
 	TString(const TypeSymbol *Rhs) : TString()
 	{
 		if(!Rhs || !*Rhs) { return; }
 
-		_SizeBuffer = STRING_INIT_SIZE
+		_SizeBuffer = StringInitSize
 		Data = Make<TypeSymbol>(_SizeBuffer);
 
 		for(_Size = 0; Data[_Size] = Rhs[_Size]; ++_Size)
 		{
 			if(_Size <= _SizeBuffer)
 			{
-				Data = Resize(Data, _SizeBuffer += STRING_INIT_SIZE);
+				Data = Resize(Data, _SizeBuffer += StringInitSize);
 			}
 		}
 
 		Data[_Size] = TypeSymbol();
 	};
+	*/
 
 	~TString()
 	{ 
-		Data = rm(Data);
+		Data = Remove(Data);
 	};
 
 	inline friend TFStream & operator>>(TFStream &In, TString &String)

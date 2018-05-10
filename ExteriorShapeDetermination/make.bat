@@ -1,1 +1,1 @@
-cl /I ..\Core ESD.cpp /EHsc
+cl /I ..\Core ExteriorShapeDetermination.cpp /EHsc

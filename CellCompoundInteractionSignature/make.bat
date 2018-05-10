@@ -1,1 +1,1 @@
-cl /I ..\ CCIS.cpp /EHsc
+cl /I ..\Core CellCompoundInteractionSignature.cpp /EHsc

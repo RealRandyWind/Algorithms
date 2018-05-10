@@ -1,19 +1,37 @@
 #ifndef TYPES_HPP
 #define TYPES_HPP
 
+#include <cstdlib>
 #include <cstdint>
-#include <iostream>
+#include <fstream>
+#include <initializer_list>
 
-using TIStream = std::istream;
-using TOStream = std::ostream;
+#define Success EXIT_SUCCESS
+#define Failure EXIT_FAILURE
+
+template<typename TypeElement>
+using TListInitializer = std::initializer_list<TypeElement>;
+
+template<typename TypeElement>
+using TIStream = std::basic_istream<TypeElement>;
+
+template<typename TypeElement>
+using TOStream = std::basic_ostream<TypeElement>;
+
 using FEnum = uint16_t;
 using FRaw = uint8_t;
-using FPointer = void*;
-using FReal = double;
+using FPointer = void *;
+using FReal = float;
 using FSize = size_t;
 using FBool = bool;
 using FNatural = unsigned int;
 using FInteger = int;
 using FReturn = int;
+
+using NullPtr = decltype(nullptr); 
+using NullStr = decltype("");
+using NullChr = decltype('\0');
+using True = decltype(true);
+using False = decltype(false);
 
 #endif

@@ -1,0 +1,1 @@
+cl /I ..\Core CellTypeExtraction.cpp /EHsc

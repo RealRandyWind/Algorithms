@@ -2,7 +2,6 @@
 #define MODEL_HPP
 
 #include <Types>
-#include <Constants>
 #include <Point>
 #include <Iterator>
 #include <Data>
@@ -38,6 +37,7 @@ struct TModel
 	virtual FVoid Train(TIterator<FSample>, TypeParameters) = 0;
 	virtual FVoid Use(TIterator<FFeature>, TData<FLabel> &, TypeParameters) = 0;
 	virtual FVoid Validate(TIterator<FSample>, FPerformence &, TypeParameters) = 0;
+	virtual FVoid Optimize(TIterator<FSample>, TypeParameters) = 0;
 	virtual FVoid Optimize(TypeParameters) = 0;
 };
 
