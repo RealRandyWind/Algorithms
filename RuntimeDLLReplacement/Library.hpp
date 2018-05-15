@@ -13,6 +13,8 @@ public:
 	virtual float MyFunction(float Argument) = 0;
 };
 
+extern "C" LIBRARY_API ILibrary* __cdecl GetAPI();
+
 class LIBRARY_API CLibrary : public ILibrary
 {
 public:
@@ -24,5 +26,3 @@ private:
 public:
 	virtual float MyFunction(float Argument) override;
 };
-
-extern "C" LIBRARY_API ILibrary* __cdecl GetAPI();

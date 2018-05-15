@@ -22,6 +22,7 @@ using FSize = size_t;
 using FBool = bool;
 using FNatural = unsigned int;
 using FInteger = int;
+using FTime = time_t;
 using FReturn = decltype(EXIT_SUCCESS);
 using FVoid = void;
 

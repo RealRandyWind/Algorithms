@@ -37,7 +37,7 @@ FReturn RuntimeLoadAPI(HINSTANCE &HAPI, ILibrary** PtrAPI)
 	return Success;
 }
 
-FReturn main(FVoid)
+FReturn main()
 {
 	HINSTANCE HAPI;
 	ILibrary* API;

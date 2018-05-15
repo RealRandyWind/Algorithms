@@ -4,6 +4,9 @@
 #include <Iterator>
 
 template<typename TypeData>
+struct TData;
+
+template<typename TypeData>
 struct TData
 {
 	FSize _Size;

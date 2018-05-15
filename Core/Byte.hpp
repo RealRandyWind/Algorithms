@@ -4,6 +4,9 @@
 #include <Functions>
 
 template<FSize SizeBytes>
+struct TByte;
+
+template<FSize SizeBytes>
 struct TByte
 {
 	FRaw Data[SizeBytes];

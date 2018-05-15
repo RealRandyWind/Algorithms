@@ -7,6 +7,9 @@
 static const FSize SequenceInitSize = 8;
 
 template<typename TypeElement>
+struct TSequence;
+
+template<typename TypeElement>
 struct TSequence
 {
 	using FIterator = TIterator<TypeElement>;

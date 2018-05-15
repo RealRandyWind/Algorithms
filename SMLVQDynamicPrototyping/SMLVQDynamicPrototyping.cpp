@@ -23,21 +23,23 @@ struct FPrototype
 
 FReturn main()
 {
-	FParameters Parameters;
+	FParameters Parameters = { 0.04 };
+	FModel Model("SMDLVQ.Model");
+	
+	/* Train Case */
 	FModel:FPerformence BeforOptimize, AfterOptimize;
-	TData<FModel::FLabel> Labels;
 	
-	TData<FModel::FSample> Samples("Model.Samples");
-	TData<FModel::FFeature> Features("Model.Features");
-	FModel Model("Name.Model");
-
+	TData<FModel::FSample> Samples("SMDLVQ.Samples");
 	auto Partitions = Samples.Partition(CrossValidation);
-	
 	Model.Train(Partitions[0], Parameters);
 	Model.Validate(Partitions[1], &BeforOptimize, Parameters);
 	Model.Optimize(Partitions[2], Parameters);
 	Model.Validate(Partitions[1], &AfterOptimize, Parameters);
 
+	/* Use Case */
+	TData<FModel::FLabel> Labels;
+	
+	TData<FModel::FFeature> Features("SMDLVQ.Features");
 	Model.Use(Features, &Labels, Parameters);
 
 	return Success;

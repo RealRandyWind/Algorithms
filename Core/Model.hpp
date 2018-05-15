@@ -6,6 +6,9 @@
 #include <Data>
 
 template<FSize SizeFature, FSize SizeLabel, TypeParameters>
+struct TModel;
+
+template<FSize SizeFature, FSize SizeLabel, TypeParameters>
 struct TModel
 {
 	using FFeature = TPoint<SizeFature, FReal>;

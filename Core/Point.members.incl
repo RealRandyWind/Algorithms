@@ -1,0 +1,35 @@
+template<FSize SizeLhs, typename TypeLhs>
+inline operator TPoint<SizeLhs, TypeLhs>() const
+{	
+	TPoint<SizeLhs, TypeLhs> Lhs;
+	
+	Lhs = Point;
+	return Lhs;
+};
+
+template<typename TypeLhs>
+inline operator TPoint2D<TypeLhs>() const
+{	
+	TPoint2D<TypeLhs> Lhs;
+
+	Lhs.Point = Point;
+	return Lhs;
+};
+
+template<typename TypeLhs>
+inline operator TPoint3D<TypeLhs>() const
+{	
+	TPoint3D<TypeLhs> Lhs;
+	
+	Lhs.Point = Point;
+	return Lhs;
+};
+
+template<typename TypeLhs>
+inline operator TPoint4D<TypeLhs>() const
+{
+	TPoint4D<TypeLhs> Lhs;
+	
+	Lhs.Point = Point;
+	return Lhs;
+};

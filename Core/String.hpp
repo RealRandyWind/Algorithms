@@ -6,6 +6,9 @@
 static const FSize StringInitSize = 8;
 
 template<typename TypeSymbol>
+struct TString;
+
+template<typename TypeSymbol>
 struct TString
 {
 	FSize _SizeBuffer, _Size;

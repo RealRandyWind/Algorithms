@@ -42,7 +42,6 @@ inline Type * Make(FSize Size)
 template<typename Type>
 inline Type * Resize(Type *Rhs, FSize Size)
 {
-
 	Rhs = (Type *) realloc(Rhs, Size * sizeof(Type));
 	if(!Rhs)
 	{
