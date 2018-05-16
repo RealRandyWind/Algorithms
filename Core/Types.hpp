@@ -2,17 +2,15 @@
 
 #include <cstdlib>
 #include <cstdint>
+#include <iostream>
 #include <fstream>
 #include <initializer_list>
 
-template<typename TypeElement>
+template<typename TypeElement=char>
 using TListInitializer = std::initializer_list<TypeElement>;
 
-template<typename TypeElement>
-using TIStream = std::basic_istream<TypeElement>;
-
-template<typename TypeElement>
-using TOStream = std::basic_ostream<TypeElement>;
+using TIStream = std::istream;
+using TOStream = std::ostream;
 
 using FEnum = uint16_t;
 using FRaw = uint8_t;

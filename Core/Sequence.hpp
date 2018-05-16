@@ -17,24 +17,32 @@ struct TSequence
 	FSize _Size, _BufferSize;
 	TypeElement *Data;
 
-	inline FSize Size()
+	inline FSize Size(
+			FVoid
+		)
 	{
 		return _Size;
 	};
 
-	inline FSize BufferSize()
+	inline FSize BufferSize(
+			FVoid
+		)
 	{
 		return _BufferSize;
 	};
 
-	TSequence()
+	TSequence(
+			FVoid
+		)
 	{
 		_Size = _BufferSize = 0;
 		Data = NullPtr;
 	};
 
 	template<typename TypeRhs>
-	TSequence(TListInitializer<TypeRhs> List)
+	TSequence(
+			TListInitializer<TypeRhs> List
+		)
 	{
 		Data = Make<TypeElement>(List.size());
 		for (auto Value : List)
@@ -46,7 +54,9 @@ struct TSequence
 	};
 
 	template<typename TypeLhs>
-	inline operator TSequence<TypeLhs>() const
+	inline operator TSequence<TypeLhs>(
+			FVoid
+		) const
 	{
 		
 		TSequence<TypeLhs> Lhs;
@@ -60,7 +70,9 @@ struct TSequence
 		return Lhs;
 	};
 
-	inline FIterator Iterator()
+	inline FIterator Iterator(
+			FVoid
+		)
 	{
 		FIterator It;
 		

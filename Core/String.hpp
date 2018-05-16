@@ -14,18 +14,24 @@ struct TString
 	FSize _SizeBuffer, _Size;
 	TypeSymbol *Data;
 
-	inline FSize Size()
+	inline FSize Size(
+			FVoid
+		)
 	{
 		return _Size;
 	};
 
-	TString()
+	TString(
+			FVoid
+		)
 	{
 		_SizeBuffer = _Size = 0;
 		Data = NullPtr;
 	};
 
-	TString(const TString &Rhs)
+	TString(
+			const TString &Rhs
+		)
 	{
 		FSize Index;
 
@@ -38,7 +44,9 @@ struct TString
 		};
 	};
 	
-	TString(TString &&Rhs)
+	TString(
+			TString &&Rhs
+		)
 	{
 		_SizeBuffer = Rhs._SizeBuffer;
 		_Size = Rhs._Size;
@@ -48,7 +56,9 @@ struct TString
 	};
 
 	template<typename TypeRhs>
-	TString(TListInitializer<TypeRhs> List) : TString()
+	TString(
+			TListInitializer<TypeRhs> List
+		) : TString()
 	{
 		Data = Make<TypeSymbol>(List.size());
 		for (auto Value : List)
@@ -79,12 +89,17 @@ struct TString
 	};
 	*/
 
-	~TString()
+	~TString(
+			FVoid
+		)
 	{ 
 		Data = Remove(Data);
 	};
 
-	inline friend TFStream & operator>>(TFStream &In, TString &String)
+	inline friend TFStream & operator>>(
+			TFStream &In,
+			TString &String
+		)
 	{
 		FSize Index;
 		
@@ -95,7 +110,10 @@ struct TString
 		return In;
 	};
 
-	inline friend TOStream & operator<<(TOStream &Out, const TString &String)
+	inline friend TOStream & operator<<(
+			TOStream &Out,
+			const TString &String
+		)
 	{
 		FSize Index;
 

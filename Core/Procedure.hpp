@@ -10,5 +10,9 @@ struct TProcedure;
 template<typename TypeInput, typename TypeResult, typename TypeParameters>
 struct TProcedure
 {
-	virtual FVoid Use(TIterator<TypeInput>, TData<TypeResult> &, TypeParameters) = 0;
+	virtual FVoid Use(
+			TIterator<TypeInput>,
+			TData<TypeResult> &,
+			TypeParameters
+		) = 0;
 };

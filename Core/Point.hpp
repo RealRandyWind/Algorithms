@@ -18,13 +18,17 @@ struct TPoint
 {
 	TypeElement Data[SizeData];
 
-	inline FSize Size()
+	inline FSize Size(
+			FVoid
+		)
 	{
 		return SizeData;
 	};
 
 	template<FSize SizeLhs, typename TypeLhs>
-	inline operator TPoint<SizeLhs, TypeLhs>() const
+	inline operator TPoint<SizeLhs, TypeLhs>(
+			FVoid
+		) const
 	{
 		TPoint<SizeLhs, TypeLhs> Lhs;
 		FSize Index, End;
@@ -38,7 +42,9 @@ struct TPoint
 	};
 
 	template<typename TypeLhs>
-	inline operator TPoint2D<TypeLhs>() const
+	inline operator TPoint2D<TypeLhs>(
+			FVoid
+		) const
 	{
 		TPoint2D<TypeLhs> Lhs;
 		
@@ -47,7 +53,9 @@ struct TPoint
 	};
 
 	template<typename TypeLhs>
-	inline operator TPoint3D<TypeLhs>() const
+	inline operator TPoint3D<TypeLhs>(
+			FVoid
+		) const
 	{
 		TPoint3D<TypeLhs> Lhs;
 		
@@ -56,7 +64,9 @@ struct TPoint
 	};
 
 	template<typename TypeLhs>
-	inline operator TPoint4D<TypeLhs>() const
+	inline operator TPoint4D<TypeLhs>(
+			FVoid
+		) const
 	{
 		TPoint4D<TypeLhs> Lhs;
 		

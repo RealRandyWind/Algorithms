@@ -4,19 +4,28 @@
 #include <Types>
 
 template<typename Type>
-inline Type Max(const Type &Lhs, const Type &Rhs)
+inline Type Max(
+		const Type &Lhs,
+		const Type &Rhs
+	)
 {
 	return (Lhs < Rhs ? Rhs : Lhs);
 };
 
 template<typename Type>
-inline Type Min(const Type &Lhs, const Type &Rhs)
+inline Type Min(
+		const Type &Lhs,
+		const Type &Rhs
+	)
 {
 	return (Lhs < Rhs ? Lhs : Rhs);
 };
 
 template<typename Type>
-inline Type Swap(Type &Lhs, Type &Rhs)
+inline Type Swap(
+		Type &Lhs,
+		Type &Rhs
+	)
 {
 	Type Tmp;
 
@@ -27,7 +36,9 @@ inline Type Swap(Type &Lhs, Type &Rhs)
 };
 
 template<typename Type>
-inline Type * Make(FSize Size)
+inline Type * Make(
+		FSize Size
+	)
 {
 	Type *Rhs;
 
@@ -40,7 +51,10 @@ inline Type * Make(FSize Size)
 };
 
 template<typename Type>
-inline Type * Resize(Type *Rhs, FSize Size)
+inline Type * Resize(
+		Type *Rhs,
+		FSize Size
+	)
 {
 	Rhs = (Type *) realloc(Rhs, Size * sizeof(Type));
 	if(!Rhs)
@@ -51,7 +65,9 @@ inline Type * Resize(Type *Rhs, FSize Size)
 };
 
 template<typename Type>
-inline Type * Remove(Type *Data)
+inline Type * Remove(
+		Type *Data
+	)
 {
 	free(Data);
 	return NullPtr;

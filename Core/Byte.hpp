@@ -11,12 +11,17 @@ struct TByte
 {
 	FRaw Data[SizeBytes];
 
-	inline FSize Size()
+	inline FSize Size(
+			FVoid
+		)
 	{
 		return SizeBytes;
 	};
 
-	inline friend TIStream & operator>>(TIStream &In, TByte<SizeBytes> &Bytes)
+	inline friend TIStream & operator>>(
+			TIStream &In,
+			TByte<SizeBytes> &Bytes
+		)
 	{
 		FSize Index;
 		
@@ -27,7 +32,10 @@ struct TByte
 		return In;
 	};
 
-	inline friend TOStream & operator<<(TOStream &Out, const TByte<SizeBytes> &Bytes)
+	inline friend TOStream & operator<<(
+			TOStream &Out,
+			const TByte<SizeBytes> &Bytes
+		)
 	{
 		FSize Index;
 
@@ -39,7 +47,9 @@ struct TByte
 	};
 
 	template<typename TypeLhs>
-	inline operator TypeLhs() const
+	inline operator TypeLhs(
+			FVoid
+		) const
 	{
 		TypeLhs Lhs;
 		FRaw* PtrLhs;
@@ -56,7 +66,10 @@ struct TByte
 };
 
 template<typename TypeLhs, FSize SizeBytes>
-inline FBool operator==(const TypeLhs &Lhs, const TByte<SizeBytes> &Rhs)
+inline FBool operator==(
+		const TypeLhs &Lhs,
+		const TByte<SizeBytes> &Rhs
+	)
 {
 	FSize Index, End;
 	const FRaw* PtrLhs;
@@ -74,13 +87,19 @@ inline FBool operator==(const TypeLhs &Lhs, const TByte<SizeBytes> &Rhs)
 };
 
 template<FSize SizeBytes, typename TypeRhs>
-inline FBool operator==(const TByte<SizeBytes> &Lhs, const TypeRhs &Rhs)
+inline FBool operator==(
+		const TByte<SizeBytes> &Lhs,
+		const TypeRhs &Rhs
+	)
 {
 	return (Rhs == Lhs);
 };
 
 template<FSize SizeBytes, typename TypeLhs>
-inline FBool operator!=(const TypeLhs &Lhs, const TByte<SizeBytes> &Rhs)
+inline FBool operator!=(
+		const TypeLhs &Lhs,
+		const TByte<SizeBytes> &Rhs
+	)
 {
 	FSize Index, End;
 	const FRaw* PtrLhs;
@@ -98,13 +117,18 @@ inline FBool operator!=(const TypeLhs &Lhs, const TByte<SizeBytes> &Rhs)
 };
 
 template<FSize SizeBytes, typename TypeRhs>
-inline FBool operator!=(const TByte<SizeBytes> &Lhs, const TypeRhs &Rhs)
+inline FBool operator!=(
+		const TByte<SizeBytes> &Lhs,
+		const TypeRhs &Rhs
+	)
 {
 	return (Rhs != Lhs);
 };
 
 template<FSize SizeBytes>
-inline FBool operator!(const TByte<SizeBytes> &Rhs)
+inline FBool operator!(
+		const TByte<SizeBytes> &Rhs
+	)
 {
 	FSize Index;
 

@@ -2,6 +2,7 @@
 
 #include <Types>
 #include <Iterator>
+#include <Sequence>
 
 template<typename TypeData>
 struct TData;
@@ -14,26 +15,35 @@ struct TData
 
 	using FIterator = TIterator<TypeData>;
 
-	inline FSize Size()
+	inline FSize Size(
+			FVoid
+		)
 	{
 		return _Size;
 	};
 
-	TIterator<FIterator> Partition(FSequence<FReal> Ratios, FSize BatchSize)
+	TIterator<FIterator> Partition(
+			TSequence<FReal> Ratios,
+			FSize BatchSize
+		)
 	{
 		TIterator<FIterator> It;
 
 		return It;
 	};
 
-	TIterator<FIterator> Partition(FSequence<FReal> Ratios)
+	TIterator<FIterator> Partition(
+			TSequence<FReal> Ratios
+		)
 	{
 		TIterator<FIterator> It;
 
 		return It;
 	};
 
-	FIterator Iterator()
+	FIterator Iterator(
+			FVoid
+		)
 	{
 		FIterator It;
 

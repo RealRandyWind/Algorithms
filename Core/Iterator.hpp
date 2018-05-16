@@ -8,37 +8,51 @@ struct TIterator
 	FSize _Size;
 	TypeElement *Data;
 
-	FSize Size()
+	FSize Size(
+			FVoid
+		)
 	{
 		return _Size;
 	};
 
-	TypeElement * begin()
+	TypeElement * begin(
+			FVoid
+		)
 	{
 		return &Data[0];
 	};
 
-	TypeElement * begin() const
+	TypeElement * begin(
+			FVoid
+		) const
 	{
 		return &Data[0];
 	};
 
-	TypeElement * end()
+	TypeElement * end(
+			FVoid
+		)
 	{
 		return &Data[_Size];
 	};
 
-	TypeElement * end() const
+	TypeElement * end(
+			FVoid
+		) const
 	{
 		return &Data[_Size];
 	};
 
-	TypeElement & operator[](FSize Index)
+	TypeElement & operator[](
+			FSize Index
+		)
 	{
 		return Data[Index];
 	};
 
-	TypeElement & operator[](FSize Index) const
+	TypeElement & operator[](
+			FSize Index
+		) const
 	{
 		return Data[Index];
 	};
