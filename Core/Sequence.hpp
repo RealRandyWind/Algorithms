@@ -24,11 +24,33 @@ struct TSequence
 		return _Size;
 	};
 
+	inline FSize Size(
+			FVoid
+		) const
+	{
+		return _Size;
+	};
+
 	inline FSize BufferSize(
 			FVoid
 		)
 	{
 		return _BufferSize;
+	};
+
+	inline FSize BufferSize(
+			FVoid
+		) const
+	{
+		return _BufferSize;
+	};
+
+	FVoid Reserve(
+			FSize ReserveSize
+		)
+	{
+		_BufferSize = ReserveSize;
+		Data = Resize(Data, _BufferSize);
 	};
 
 	TSequence(
@@ -37,6 +59,15 @@ struct TSequence
 	{
 		_Size = _BufferSize = 0;
 		Data = NullPtr;
+	};
+
+	TSequence(
+			FSize ReserveSize
+		)
+	{
+		_Size = 0;
+		_BufferSize = ReserveSize;
+		Data = Make<TypeElement>(_BufferSize);
 	};
 
 	template<typename TypeRhs>
@@ -54,7 +85,7 @@ struct TSequence
 	};
 
 	template<typename TypeLhs>
-	inline operator TSequence<TypeLhs>(
+	operator TSequence<TypeLhs>(
 			FVoid
 		) const
 	{
@@ -70,7 +101,7 @@ struct TSequence
 		return Lhs;
 	};
 
-	inline FIterator Iterator(
+	FIterator Iterator(
 			FVoid
 		)
 	{

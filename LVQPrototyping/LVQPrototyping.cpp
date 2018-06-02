@@ -1,11 +1,14 @@
 #include <Types>
 #include <LVQModel>
 
-FReturn main(FVoid)
+using namespace LVQ;
+
+FReturn main(
+		FVoid
+	)
 {
-	LVQ::CModel Model;
+	CLVQ1 LVQ1;
 
-	Model.Optimize({0.4f});
-
+	LVQ1.Optimize({0.2f});
 	return Success;
 }

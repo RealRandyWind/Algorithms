@@ -2,6 +2,7 @@
 
 #include <Types>
 #include <Model>
+#include <Sequence>
 
 namespace LVQ
 {
@@ -10,14 +11,22 @@ namespace LVQ
 		FReal Alpha;
 	};
 
-	class CModel : public TModel<8, 3, FParameters>
+	class CLVQ1 : public TModel<8, 3, FParameters>
 	{
 	public:
-		CModel(
+
+		struct FState
+		{
+			TSequence<FFeature> Prototypes;
+		};
+
+		FState *State;
+
+		CLVQ1(
 				FVoid
 			);
 
-		~CModel(
+		~CLVQ1(
 				FVoid
 			);
 
@@ -46,5 +55,24 @@ namespace LVQ
 		virtual FVoid Optimize(
 				FParameters Parameters
 			) override;
+
+	private:
+
+		FVoid _Use(
+				const FFeature,
+				FLabel &
+			);
+
+		FVoid _Train(
+				const FLabel &, 
+				const FLabel &, 
+				FReal
+			);
+
+		FVoid _Validate(
+				const FLabel &,
+				const FLabel &,
+				FPerformence &
+			);
 	};
 }

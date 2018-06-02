@@ -1,16 +1,29 @@
 #pragma once
 
 #include <Types>
+#include <String>
+
+template<typename TypeElement>
+struct TIterator;
+template<typename TypeElement>
+struct TDistribution;
 
 template<typename TypeElement>
 struct TIterator
 {
-	FSize _Size;
+	FSize _Size, _BufferSize;
 	TypeElement *Data;
 
-	FSize Size(
+	inline FSize Size(
 			FVoid
 		)
+	{
+		return _Size;
+	};
+
+	inline FSize Size(
+			FVoid
+		) const
 	{
 		return _Size;
 	};
@@ -43,14 +56,14 @@ struct TIterator
 		return &Data[_Size];
 	};
 
-	TypeElement & operator[](
+	inline TypeElement & operator[](
 			FSize Index
 		)
 	{
 		return Data[Index];
 	};
 
-	TypeElement & operator[](
+	inline TypeElement & operator[](
 			FSize Index
 		) const
 	{

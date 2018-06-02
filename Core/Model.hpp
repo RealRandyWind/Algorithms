@@ -5,14 +5,14 @@
 #include <Iterator>
 #include <Data>
 
-template<FSize SizeFature, FSize SizeLabel, typename TypeParameters>
+template<FSize SizeFeature, FSize SizeLabel, typename TypeParameters>
 struct TModel;
 
-template<FSize SizeFature, FSize SizeLabel, typename TypeParameters>
+template<FSize SizeFeature, FSize SizeLabel, typename TypeParameters>
 struct TModel
 {
 	using FParameters = TypeParameters;
-	using FFeature = TPoint<SizeFature, FReal>;
+	using FFeature = TPoint<SizeFeature, FReal>;
 	using FLabel = TPoint<SizeLabel, FReal>;
 	
 	struct FSample
@@ -24,24 +24,26 @@ struct TModel
 	struct FPerformence
 	{
 		FLabel ErrorMean, ErrorSD, ErrorSkew;
-		FReal Error, ErrorTypeII, ErrorTypeI;
+		FReal Error, ErrorTypeII, ErrorTypeI, ErrorGeneralization;
+		FTime RunningTime;
+		FSize ComplexOperations, SimpleOperations, N;
 	};
 
-	FSize FeatureSize(
+	inline FSize FeatureSize(
 			FVoid
 		)
 	{
-		return SizeFature;
+		return SizeFeature;
 	};
 
-	FSize LabelSize(
+	inline FSize LabelSize(
 			FVoid
 		)
 	{
 		return SizeLabel;
 	};
 
-	TIterator<FSample> Zip(
+	TIterator<FSample> Pair(
 			TIterator<FFeature>,
 			TIterator<FLabel>
 		)

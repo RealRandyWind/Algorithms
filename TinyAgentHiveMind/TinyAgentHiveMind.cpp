@@ -10,11 +10,12 @@ struct FFocus
 	FAgent &Subject;
 };
 
+template<FSize SizeFocus>
 struct FState
 {
 	TPoint2D<FReal> Position, Direction, Orientation;
 	FReal Speed, Acceleration;
-	FFocus Focus;
+	FFocus[SizeFocus] FocusList;
 };
 
 struct FAgent

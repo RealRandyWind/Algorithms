@@ -1,5 +1,4 @@
-#ifndef DEFAULT_HPP
-#define DEFAULT_HPP
+#pragma once
 
 #include <Types>
 
@@ -10,5 +9,3 @@ namespace Format
 		
 	};
 }
-
-#endif

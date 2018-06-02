@@ -21,6 +21,27 @@ struct TString
 		return _Size;
 	};
 
+	inline FSize Size(
+			FVoid
+		) const
+	{
+		return _Size;
+	};
+
+	inline FSize SizeBuffer(
+		FVoid
+		)
+	{
+		return _SizeBuffer;
+	};
+
+	inline FSize SizeBuffer(
+		FVoid
+		) const
+	{
+		return _SizeBuffer;
+	};
+
 	TString(
 			FVoid
 		)
@@ -96,8 +117,8 @@ struct TString
 		Data = Remove(Data);
 	};
 
-	inline friend TFStream & operator>>(
-			TFStream &In,
+	friend FIStream & operator>>(
+			FIStream &In,
 			TString &String
 		)
 	{
@@ -110,8 +131,8 @@ struct TString
 		return In;
 	};
 
-	inline friend TOStream & operator<<(
-			TOStream &Out,
+	friend FOStream & operator<<(
+			FOStream &Out,
 			const TString &String
 		)
 	{

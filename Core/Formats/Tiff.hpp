@@ -1,5 +1,4 @@
-#ifndef TIFF_HPP
-#define TIFF_HPP
+#pragma once
 
 #include <Types>
 
@@ -10,5 +9,3 @@ namespace Format
 
 	};
 }
-
-#endif

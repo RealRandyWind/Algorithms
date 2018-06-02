@@ -18,8 +18,15 @@ struct TByte
 		return SizeBytes;
 	};
 
-	inline friend TIStream & operator>>(
-			TIStream &In,
+	inline FSize Size(
+			FVoid
+		) const
+	{
+		return SizeBytes;
+	};
+
+	friend FIStream & operator>>(
+			FIStream &In,
 			TByte<SizeBytes> &Bytes
 		)
 	{
@@ -32,8 +39,8 @@ struct TByte
 		return In;
 	};
 
-	inline friend TOStream & operator<<(
-			TOStream &Out,
+	friend FOStream & operator<<(
+			FOStream &Out,
 			const TByte<SizeBytes> &Bytes
 		)
 	{
@@ -47,7 +54,7 @@ struct TByte
 	};
 
 	template<typename TypeLhs>
-	inline operator TypeLhs(
+	operator TypeLhs(
 			FVoid
 		) const
 	{
@@ -66,7 +73,7 @@ struct TByte
 };
 
 template<typename TypeLhs, FSize SizeBytes>
-inline FBool operator==(
+FBool operator==(
 		const TypeLhs &Lhs,
 		const TByte<SizeBytes> &Rhs
 	)
@@ -96,7 +103,7 @@ inline FBool operator==(
 };
 
 template<FSize SizeBytes, typename TypeLhs>
-inline FBool operator!=(
+FBool operator!=(
 		const TypeLhs &Lhs,
 		const TByte<SizeBytes> &Rhs
 	)
@@ -126,7 +133,7 @@ inline FBool operator!=(
 };
 
 template<FSize SizeBytes>
-inline FBool operator!(
+FBool operator!(
 		const TByte<SizeBytes> &Rhs
 	)
 {

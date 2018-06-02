@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"_",
+				"_SizeBuffer"
+			],
+			[
+				"Type",
+				"TypePoint"
+			],
+			[
+				"TPoin",
+				"TPoint2D"
+			],
+			[
+				"TI",
+				"TIterator"
+			],
+			[
+				"F",
+				"FSize"
+			],
+			[
+				"Typ",
+				"TypeColor"
+			],
+			[
+				"T",
+				"TPoint2D"
+			],
+			[
+				"FS",
+				"FSequence"
+			],
+			[
+				"GetA",
+				"PtrGetAPI"
+			],
+			[
+				"Ex",
+				"EXIT_FAILURE"
+			],
+			[
+				"Exi",
+				"EXIT_SUCCESS"
+			],
+			[
+				"I",
+				"ILibrary"
+			],
+			[
+				"TY",
+				"TypeAPI"
+			],
+			[
 				"FP",
 				"FPoint"
 			],
@@ -32,24 +84,8 @@
 				"FeatureCount"
 			],
 			[
-				"F",
-				"FTriangle"
-			],
-			[
 				"FTri",
 				"FTriangles"
-			],
-			[
-				"_",
-				"_Size"
-			],
-			[
-				"Typ",
-				"TypeElement"
-			],
-			[
-				"Type",
-				"TypeElement"
 			],
 			[
 				"EX",
@@ -68,16 +104,8 @@
 				"SizeLabel"
 			],
 			[
-				"FS",
-				"FSize"
-			],
-			[
 				"Validat",
 				"ValidateIter"
-			],
-			[
-				"T",
-				"Type"
 			],
 			[
 				"vec",
@@ -90,10 +118,6 @@
 			[
 				"P",
 				"PhotoScript"
-			],
-			[
-				"Ex",
-				"Exception"
 			],
 			[
 				"_D",
@@ -166,10 +190,6 @@
 			[
 				"_ADa",
 				"_AdapterIndex"
-			],
-			[
-				"Exi",
-				"EXIT_FAILURE"
 			],
 			[
 				"adap",
@@ -494,64 +514,80 @@
 			[
 				"prin",
 				"printf\tprintf …"
-			],
-			[
-				"hea",
-				"tiff_header"
-			],
-			[
-				"tiff_",
-				"tiff_directory"
-			],
-			[
-				"long",
-				"long_t"
-			],
-			[
-				"os",
-				"ostream"
-			],
-			[
-				"new",
-				"newarray"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "Core/Types.hpp",
+			"file": "LVQPrototyping/LVQPrototyping.cpp",
 			"settings":
 			{
-				"buffer_size": 845,
+				"buffer_size": 291,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ShapeSpacing/init_cl.bat",
+			"file": "LVQPrototyping/LVQModel.hpp",
 			"settings":
 			{
-				"buffer_size": 44,
+				"buffer_size": 804,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ShapeSpacing/make.bat",
+			"file": "Core/Byte.hpp",
 			"settings":
 			{
-				"buffer_size": 36,
+				"buffer_size": 2175,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ShapeSpacing/ShapeSpacing.cpp",
+			"file": "Core/Data.hpp",
 			"settings":
 			{
-				"buffer_size": 106,
+				"buffer_size": 1360,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Core/String.hpp",
+			"settings":
+			{
+				"buffer_size": 1918,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Biosamples Cryovail Storage Box Dim\n29 x 29 x 32 cm\nIncl. 4 Ice Packs\n51.08 h @43 C°\n\n3d\n92h\n\n\nBiosamples Cryovail Storage Box\n29 x 29 x 32 cm\nInc. 4 Ice Packs\n51.08 h @43 C°\n\nCase A\nsingel box 5.798 kg times 5 a total of (28.990 kg - 29.00 kg)\nrespectivly (€275.39 - €275.39)\n\nCase B\nsingel box 6.110 kg times 3 a total of (18.330 kg - 19.00 kg)\nrespectivly (€175.78 - €203.43)\n\nSend on Monday it will arrive on Thursday. expect about (92h)\nonly working days.\n\nUniversity Medical Center Groningen\nAccount\n955923986\nGerrit Drent\n\n\nCall 0880552888\nTarnsport within day single person will do, 3000 - 4000\n\n",
+			"settings":
+			{
+				"buffer_size": 604,
+				"line_ending": "Windows",
+				"name": "Biosamples Cryovail Storage Box Dim"
+			}
+		},
+		{
+			"contents": "Adobe® Creative Cloud™ Student and Teacher Edition 4197-9M34-16G2-D493-L2AR-M47J\nAdobe® Creative Cloud™ Student and Teacher Edition T55W-ZJ4K-597Z-JRD4-940Q-8572\nAdobe® Creative Cloud™ Student and Teacher Edition 3493-YD54-6D7I-4T27-DLH2-3364\nAdobe® Creative Cloud™ Student and Teacher Edition 05H5-40KS-473E-V37I-F841-CTBB",
+			"settings":
+			{
+				"buffer_size": 323,
+				"line_ending": "Windows",
+				"name": "Adobe® Creative Cloud™ Student and Teacher Edition"
+			}
+		},
+		{
+			"contents": "a8ea-2a32b01C8d37",
+			"settings":
+			{
+				"buffer_size": 17,
+				"line_ending": "Windows",
+				"name": "a8ea-2a32b01C8d37"
 			}
 		}
 	],
@@ -563,7 +599,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "c++",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -593,21 +629,99 @@
 	[
 		"/D/Repositories/Algorithms",
 		"/D/Repositories/Algorithms/Core",
-		"/D/Repositories/Algorithms/ShapeSpacing",
+		"/D/Repositories/Algorithms/Core/Formats",
+		"/D/Repositories/Algorithms/LVQPrototyping",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC",
 		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping",
 		"/D/Repositories/Algorithms/TinyAgentHiveMind"
 	],
 	"file_history":
 	[
+		"/D/Repositories/Algorithms/Core/Types.hpp",
+		"/D/Repositories/Algorithms/Core/Functions.hpp",
+		"/D/Repositories/Algorithms/Core/String.hpp",
+		"/D/Repositories/Algorithms/Core/Byte.hpp",
 		"/D/Repositories/Algorithms/Core/Formats/Default.hpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel.hpp",
+		"/D/Repositories/Algorithms/Core/Iterator.hpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQPrototyping.cpp",
+		"/D/Repositories/Algorithms/Core/Data.hpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel.cpp",
+		"/D/Repositories/Algorithms/Core/Formats/SDL",
+		"/D/Repositories/Algorithms/Core/Formats/SDL.hpp",
+		"/D/Repositories/Algorithms/Core/Types",
+		"/D/Repositories/Algorithms/Core/Model.hpp",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FScore.c",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FScore.h",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FSequence.h",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/SequenceAlignment.c",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FAlignment.h",
+		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FAlignment.c",
+		"/C/Users/Gebruiker/Desktop/TempRoot/Temp/Desktop29072017/tempscfr/GenerateAlignments.c",
+		"/C/Users/Gebruiker/Desktop/TempRoot/Temp/Desktop29072017/tempscfr/SequenceAlignment.c",
+		"/D/Online/Dropbox/Current Projects/Custom C Package/Sequence/sequence.h",
+		"/D/Online/Dropbox/Current Projects/Custom C Package/Alignment/alignment.c",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/Repositories/Algorithms/Core/Formats/Tiff.hpp",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/init_cl.bat",
+		"/D/Repositories/Algorithms/Core/Formats/Display_Driver/SDL.h",
+		"/D/Repositories/Algorithms/Core/Formats/Tiff_Driver/t4.h",
+		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiff.h",
+		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tif_config.h",
+		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffconf.h",
+		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffio.h",
+		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffio.hxx",
+		"/D/Repositories/Algorithms/Core/Formats/Default",
+		"/D/Repositories/Algorithms/LVQPrototyping/make.bat",
+		"/D/Repositories/Algorithms/mkfrm.bat",
+		"/D/Repositories/Algorithms/mkobj.bat",
+		"/D/Repositories/Algorithms/mkprj.bat",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/make.bat",
+		"/D/Repositories/Algorithms/Core/Formats/Tiff",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel",
+		"/D/Repositories/Algorithms/Core/Point.hpp",
+		"/D/Repositories/Algorithms/Core/Procedure.hpp",
 		"/D/Repositories/Algorithms/Core/Sequence.hpp",
+		"/D/Repositories/Algorithms/Core/Point.members.incl",
+		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/SMLVQDynamicPrototyping.cpp",
+		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/ProbeMovementOptimizerSSC.cpp",
+		"/D/Repositories/Algorithms/Core/Sequence",
+		"/D/Repositories/Algorithms/TinyAgentHiveMind/TinyAgentHiveMind.cpp",
+		"/D/Repositories/Algorithms/Core/Format",
+		"/D/Repositories/Algorithms/Core/Byte",
+		"/D/Repositories/Algorithms/Core/Data",
+		"/D/Repositories/Algorithms/Core/Functions",
+		"/D/Repositories/Algorithms/Core/Iterator",
+		"/D/Repositories/Algorithms/Core/Model",
+		"/D/Repositories/Algorithms/Core/Point",
+		"/D/Repositories/Algorithms/Core/Procedure",
+		"/D/Repositories/Algorithms/Core/String",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/Library.hpp",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/Library.cpp",
+		"/D/Repositories/Algorithms/CompoundPathsTriangularization/CompoundPathsTriangularization.cpp",
+		"/D/Repositories/Algorithms/Core/Map",
+		"/D/Repositories/Algorithms/Core/Map.hpp",
+		"/D/Repositories/Algorithms/CellIdentification/CellIdentification.cpp",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/RuntimeDLLReplacement.cpp",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/makedll.bat",
+		"/D/Repositories/Algorithms/ShapeSpacing/ShapeSpacing.cpp",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/dllmain.cpp",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/init_cl.bat",
+		"/D/Repositories/Algorithms/FontTriangularization/make.bat",
+		"/D/Repositories/Algorithms/CompoundPathsTriangularization/make.bat",
+		"/D/Repositories/Algorithms/CompoundPathsTriangularization/init_cl.bat",
+		"/D/Repositories/Algorithms/CellIdentification/init_cl.bat",
+		"/D/Repositories/Algorithms/FontTriangularization/init_cl.bat",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/make.bat",
+		"/D/Repositories/Algorithms/RuntimeDLLReplacement/Library",
+		"/D/Repositories/Algorithms/Core/Format.hpp",
+		"/D/Repositories/Algorithms/ShapeSpacing/init_cl.bat",
 		"/D/Online/Dropbox/Temp/SchutCode.hpp",
 		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/PSCMO.cpp",
 		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/make.bat",
 		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/SMDLVQ.cpp",
 		"/D/Repositories/Algorithms/ShapeSpacing/make.bat",
 		"/D/Repositories/Algorithms/ShapeSimplification/make.bat",
-		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/make.bat",
 		"/D/Repositories/Algorithms/FlowOfInterest/make.bat",
 		"/D/Repositories/Algorithms/ExteriorShapeDetermination/make.bat",
 		"/D/Repositories/Algorithms/CompoundTypeExtraction/make.bat",
@@ -615,46 +729,19 @@
 		"/D/Repositories/Algorithms/CellTracing/make.bat",
 		"/D/Repositories/Algorithms/CellIdentification/make.bat",
 		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/make.bat",
-		"/D/Repositories/Algorithms/ShapeSpacing/init_cl.bat",
-		"/D/Repositories/Algorithms/ShapeSpacing/ShapeSpacing.cpp",
-		"/D/Repositories/Algorithms/mkprj.bat",
-		"/D/Repositories/Algorithms/CompoundPathsTriangularization/CompoundPathsTriangularization.cpp",
 		"/D/Repositories/Algorithms/TinyAgentHiveMind/make.bat",
-		"/D/Repositories/Algorithms/Core/Procedure",
-		"/D/Repositories/Algorithms/Core/Procedure.hpp",
-		"/D/Repositories/Algorithms/Core/Model.hpp",
 		"/D/Repositories/Algorithms/NetComputationalGraph/make.bat",
 		"/D/Repositories/Algorithms/TestProject/init_cl.bat",
 		"/D/Repositories/Algorithms/TestProject/TestProject.cpp",
-		"/D/Repositories/Algorithms/Core/String.hpp",
-		"/D/Repositories/Algorithms/Core/Types.hpp",
 		"/D/Repositories/Algorithms/NetComputationalGraph/NCG.cpp",
 		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/CCIS.cpp",
-		"/D/Repositories/Algorithms/Core/Byte.hpp",
-		"/D/Repositories/Algorithms/Core/Data.hpp",
 		"/D/Repositories/Algorithms/Core/Optimizer",
-		"/D/Repositories/Algorithms/Core/Point.hpp",
-		"/D/Repositories/Algorithms/Core/Format.hpp",
-		"/D/Repositories/Algorithms/Core/Formats/Tiff.hpp",
-		"/D/Repositories/Algorithms/Core/Formats/Default",
-		"/D/Repositories/Algorithms/Core/Iterator.hpp",
 		"/D/Repositories/Algorithms/Core/Resolver.hpp",
 		"/D/Repositories/Algorithms/Core/Constants.hpp",
 		"/D/Repositories/Algorithms/Core/core.hpp",
-		"/D/Repositories/Algorithms/Core/Model",
-		"/D/Repositories/Algorithms/Core/Functions.hpp",
-		"/D/Repositories/Algorithms/Core/Iterator",
 		"/D/Repositories/Algorithms/Core/Resolver",
-		"/D/Repositories/Algorithms/Core/Sequence",
-		"/D/Repositories/Algorithms/Core/Data",
-		"/D/Repositories/Algorithms/Core/Format",
 		"/D/Repositories/Algorithms/Core/Constants",
-		"/D/Repositories/Algorithms/Core/Functions",
-		"/D/Repositories/Algorithms/Core/Types",
-		"/D/Repositories/Algorithms/Core/String",
-		"/D/Repositories/Algorithms/Core/Point",
 		"/D/Repositories/Algorithms/formats/Tiff",
-		"/D/Repositories/Algorithms/Core/Byte",
 		"/D/Repositories/Algorithms/ExteriorShapeDetermination/ESD.cpp",
 		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/Makefile",
 		"/D/Repositories/Algorithms/CellCompoundInteractionSignature/Makefile",
@@ -677,48 +764,7 @@
 		"/D/Repositories/Algorithms/math",
 		"/D/Repositories/Algorithms/math.hpp",
 		"/D/Repositories/OperatingSystems/Lab2/vmem.c",
-		"/D/Repositories/MicronML/MicronML_Events.h",
-		"/C/Users/Gebruiker/Desktop/TempRoot/FData.h",
-		"/C/Users/Gebruiker/Desktop/TempRoot/FData.c",
-		"/D/Repositories/Algorithms/ShapeSampleCoverageOptimizer/Makefile",
-		"/D/Repositories/Algorithms/DynamicPrototyping/test.tif",
-		"/D/Repositories/Algorithms/NeuralNetwork/network.hpp",
-		"/D/Repositories/Algorithms/tiff",
-		"/D/Repositories/Algorithms/serialize.hpp",
-		"/D/Repositories/SimpleCFramework/src/simple_serialize.c",
-		"/D/Repositories/SimpleCFramework/src/simple_serialize.h",
-		"/D/Repositories/Algorithms/DynamicPrototyping/make.bat",
-		"/D/Repositories/Algorithms/NeuralNetwork/make.bat",
-		"/D/Repositories/Algorithms/image",
-		"/D/Repositories/Algorithms/core",
-		"/D/Repositories/Algorithms/InnerOuterBoundExtractor/iobe.cpp",
-		"/D/Repositories/Algorithms/NeuralNetwork/init_cl.ps1",
-		"/D/Repositories/MicronML/apps/MicronMLApp/QtMoc.ps1",
-		"/D/Repositories/Algorithms/NeuralNetwork/test.tif",
-		"/D/Repositories/Algorithms/SampleDistributionOptimizer/sdo.cpp",
-		"/D/Online/Dropbox/Studie/Signals and Systems/Practicals/Lab2/inverses.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/mics.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/car2pol.c",
-		"/D/Repositories/SignalsAndSystems/Lab2/lfir.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/periodic.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/unisoidadd.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/aliases.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/sum2mul.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/make.bat",
-		"/D/Repositories/SignalsAndSystems/Lab1/Makefile",
-		"/D/Repositories/SignalsAndSystems/Lab1/pol2car.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/addoids.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/unisoid.c",
-		"/D/Online/Dropbox/Studie/Signals and Systems/Practicals/Lab1/templateSS.c",
-		"/D/Repositories/SignalsAndSystems/Lab1/sumsin.c",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex5/Makefile",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex6/Makefile",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex5/ex5.fl",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex1_2_3_4/Makefile",
-		"/D/Repositories/CompilerAndConstructions/Lab2/automaton.c",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex1_2_3_4/automaton.c",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex5/ex5.h",
-		"/D/Repositories/CompilerAndConstructions/Lab2/Ex5/ex5.c"
+		"/D/Repositories/MicronML/MicronML_Events.h"
 	],
 	"find":
 	{
@@ -726,9 +772,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 104.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -736,6 +783,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"TOStream",
+			"TIStream",
+			"FSMDLVQ",
 			"STRING_INIT_SIZE",
 			"BITS_BYTE",
 			"Size",
@@ -847,6 +897,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"FOStream",
+			"FIStream",
+			"FModel",
 			"StringInitSize",
 			"BitsByte",
 			"End",
@@ -955,24 +1008,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Core/Types.hpp",
+					"file": "LVQPrototyping/LVQPrototyping.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 845,
+						"buffer_size": 291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								747,
-								747
+								232,
+								238
 							]
 						],
 						"settings":
@@ -988,24 +1041,54 @@
 				},
 				{
 					"buffer": 1,
-					"file": "ShapeSpacing/init_cl.bat",
+					"file": "LVQPrototyping/LVQModel.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 44,
+						"buffer_size": 804,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								44,
-								44
+								245,
+								245
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Core/Byte.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1015,12 +1098,41 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "ShapeSpacing/make.bat",
+					"buffer": 3,
+					"file": "Core/Data.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Core/String.hpp",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 36,
+						"buffer_size": 1918,
 						"regions":
 						{
 						},
@@ -1033,7 +1145,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1049,31 +1162,87 @@
 			"sheets":
 			[
 				{
-					"buffer": 3,
-					"file": "ShapeSpacing/ShapeSpacing.cpp",
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 106,
+						"buffer_size": 604,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								49,
-								49
+								460,
+								95
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"auto_name": "Biosamples Cryovail Storage Box Dim",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 351.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Adobe® Creative Cloud™ Student and Teacher Edition",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"auto_name": "a8ea-2a32b01C8d37",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1133,7 +1302,7 @@
 	"project": "Algorithms.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1163,7 +1332,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -1171,7 +1340,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 293.0,
+	"side_bar_width": 313.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

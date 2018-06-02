@@ -25,8 +25,16 @@ struct TPoint
 		return SizeData;
 	};
 
+
+	inline FSize Size(
+			FVoid
+		) const
+	{
+		return SizeData;
+	};
+
 	template<FSize SizeLhs, typename TypeLhs>
-	inline operator TPoint<SizeLhs, TypeLhs>(
+	operator TPoint<SizeLhs, TypeLhs>(
 			FVoid
 		) const
 	{
