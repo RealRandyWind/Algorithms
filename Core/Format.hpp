@@ -2,3 +2,8 @@
 
 #include <Types>
 #include <Functions>
+
+struct FFormat
+{
+	
+};

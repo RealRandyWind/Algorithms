@@ -7,7 +7,7 @@ inline operator TPoint<SizeLhs, TypeLhs>(
 	
 	Lhs = Point;
 	return Lhs;
-};
+}
 
 template<typename TypeLhs>
 inline operator TPoint2D<TypeLhs>(
@@ -18,7 +18,7 @@ inline operator TPoint2D<TypeLhs>(
 
 	Lhs.Point = Point;
 	return Lhs;
-};
+}
 
 template<typename TypeLhs>
 inline operator TPoint3D<TypeLhs>(
@@ -29,7 +29,7 @@ inline operator TPoint3D<TypeLhs>(
 	
 	Lhs.Point = Point;
 	return Lhs;
-};
+}
 
 template<typename TypeLhs>
 inline operator TPoint4D<TypeLhs>(
@@ -40,4 +40,4 @@ inline operator TPoint4D<TypeLhs>(
 	
 	Lhs.Point = Point;
 	return Lhs;
-};
+}

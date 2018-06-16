@@ -3,25 +3,21 @@
 #include <Types>
 #include <Iterator>
 #include <Sequence>
+#include <Byte>
 
 template<typename TypeData>
 struct TData;
 
 template<typename TypeData>
-struct TData
+struct TData : public TIterator<TypeData>
 {
-	FSize _Size, _BufferSize;
-	TypeData *Data;
-
-	using FIterator = TIterator<TypeData>;
-
 	TData(
 			FVoid
 		)
 	{
 		_Size = _BufferSize = 0;
 		Data = NullPtr;
-	};
+	}
 
 	TData(
 			FSize ReserveSize
@@ -30,15 +26,15 @@ struct TData
 		_Size = 0;
 		_BufferSize = ReserveSize;
 		Data = Make<TypeData>(_BufferSize);
-	};
+	}
 
 	TData(
-			FString FilePath
-		)
+			FString Path,
+			FBool IsBinary = True
+		) : TData()
 	{
-		
-		/* TODO */
-	};
+		Load(Path, IsBinary);
+	}
 
 	TData(
 			const TData &Rhs
@@ -52,8 +48,8 @@ struct TData
 		for(Index = 0; Index < _Size; ++Index)
 		{
 			Data[Index] = Rhs.Data[Index];
-		};
-	};
+		}
+	}
 	
 	TData(
 			TData &&Rhs
@@ -64,35 +60,19 @@ struct TData
 		Data = Rhs.Data;
 		Rhs._BufferSize = Rhs._Size = 0;
 		Rhs.Data = NullPtr;
-	};
+	}
 
-	inline FSize Size(
+	~TData(
 			FVoid
 		)
 	{
-		return _Size;
-	};
-
-	inline FSize Size(
-			FVoid
-		) const
-	{
-		return _Size;
-	};
-
-	inline FSize BufferSize(
-			FVoid
-		)
-	{
-		return _BufferSize;
-	};
-
-	inline FSize BufferSize(
-			FVoid
-		) const
-	{
-		return _BufferSize;
-	};
+		if (Data)
+		{
+			Remove(Data);
+			Data = NullPtr;
+			_Size = _BufferSize = 0;
+		}
+	}
 
 	FVoid Reserve(
 			FSize ReserveSize
@@ -100,71 +80,69 @@ struct TData
 	{
 		_BufferSize = ReserveSize;
 		Data = Resize(Data, _BufferSize);
-	};
+	}
 
-	TIterator<FIterator> Partition(
-			TSequence<FReal> Ratios,
-			FSize BatchSize
+	FVoid Save(
+			FString Path,
+			FBool IsBinary = True
 		)
 	{
-		TIterator<FIterator> It;
+		FFStream File;
+		File.OpenWrite(Path, IsBinary);
+		File << *this;
+		File.Close();
+	}
 
-		/* TODO */
-
-		return It;
-	};
-
-	TIterator<FIterator> Partition(
-			TSequence<FReal> Ratios
+	FVoid Load(
+			FString Path,
+			FBool IsBinary = True
 		)
 	{
-		TIterator<FIterator> It;
+		FFStream File;
+		File.OpenRead(Path, IsBinary);
+		File >> *this;
+		File.Close();
+	}
 
-		/* TODO */
-
-		return It;
-	};
-
-	FIterator Iterator(
-			FVoid
+	friend FOStream & operator<<(
+			FOStream &Out,
+			TData<TypeData> &Rhs
 		)
 	{
-		FIterator It;
+		TByte<sizeof(FSize)> RawElementSize, RawDataSize;
+		TByte<sizeof(TypeData)> RawElement;
 
-		It.Data = Data;
-		It._Size = _Size;
-		return It;
-	};
+		RawElementSize = RawElement.Size();
+		RawDataSize = Rhs.Size();
+		
+		Out << RawElementSize;
+		Out << RawDataSize;
 
-	FIterator Iterator(
-			FSize IteratorSize
+		for(const auto &Element : Rhs)
+		{
+			RawElement = Element;
+			Out << RawElement;
+		}
+		return Out;
+	}
+
+	friend FIStream & operator>>(
+			FIStream &In,
+			TData<TypeData> &Rhs
 		)
 	{
-		FIterator It;
+		TByte<sizeof(FSize)> RawElementSize, RawDataSize;
+		TByte<sizeof(TypeData)> RawElement;
 
-		It.Data = Data;
-		It._Size = IteratorSize;
-		return It;
-	};
+		In >> RawElementSize;
+		In >> RawDataSize;
 
-	inline operator FIterator(
-			FVoid
-		)
-	{
-		return Iterator();
-	};
-
-	inline TypeData & operator[](
-			FSize Index
-		)
-	{
-		return Data[Index];
-	};
-
-	inline TypeData & operator[](
-			FSize Index
-		) const
-	{
-		return Data[Index];
-	};
+		Rhs.Reserve((FSize)RawDataSize);
+		for(auto &Element : Rhs)
+		{
+			In >> RawElement;
+			Element = RawElement;
+		}
+		return In;
+	}
 };

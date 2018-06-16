@@ -16,42 +16,36 @@ struct TByte
 		)
 	{
 		return SizeBytes;
-	};
+	}
 
 	inline FSize Size(
 			FVoid
 		) const
 	{
 		return SizeBytes;
-	};
+	}
 
 	friend FIStream & operator>>(
 			FIStream &In,
-			TByte<SizeBytes> &Bytes
+			TByte<SizeBytes> &Rhs
 		)
 	{
 		FSize Index;
 		
-		for (Index = 0; Index < SizeBytes; ++Index)
-		{
-			In >> Bytes.Data[Index];
-		}
+		In.read((char *) Rhs.Data, SizeBytes);
 		return In;
-	};
+	}
 
 	friend FOStream & operator<<(
 			FOStream &Out,
-			const TByte<SizeBytes> &Bytes
+			const TByte<SizeBytes> &Rhs
 		)
 	{
 		FSize Index;
 
-		for (Index = 0; Index < SizeBytes; ++Index)
-		{
-			Out << Bytes.Data[Index];
-		}
+		Out.write((char *) Rhs.Data, SizeBytes);
 		return Out;
-	};
+	}
 
 	template<typename TypeLhs>
 	operator TypeLhs(
@@ -59,7 +53,7 @@ struct TByte
 		) const
 	{
 		TypeLhs Lhs;
-		FRaw* PtrLhs;
+		FRaw *PtrLhs;
 		FSize Index, End;
 
 		PtrLhs = (FRaw *) &Lhs;
@@ -68,8 +62,33 @@ struct TByte
 		{
 			PtrLhs[Index] = Data[Index];
 		}
-		return *PtrLhs;
-	};
+		for( ; Index < SizeBytes; ++Index)
+		{
+			PtrLhs[Index] = 0;
+		}
+		return Lhs;
+	}
+
+	template<typename TypeRhs>
+	TByte<SizeBytes> & operator=(
+			const TypeRhs &Rhs
+		)
+	{
+		FRaw *PtrRhs;
+		FSize Index, End;
+
+		PtrRhs = (FRaw *) &Rhs;
+		End = Min(SizeBytes, sizeof(TypeRhs));
+		for(Index = 0; Index < End; ++Index)
+		{
+			Data[Index] = PtrRhs[Index];
+		}
+		for( ; Index < SizeBytes; ++Index)
+		{
+			Data[Index] = 0;
+		}
+		return *this;
+	}
 };
 
 template<typename TypeLhs, FSize SizeBytes>
@@ -79,7 +98,7 @@ FBool operator==(
 	)
 {
 	FSize Index, End;
-	const FRaw* PtrLhs;
+	const FRaw *PtrLhs;
 
 	PtrLhs = (FRaw *) &Lhs;
 	End = Min(SizeBytes, sizeof(TypeLhs));
@@ -91,7 +110,7 @@ FBool operator==(
 		}
 	}
 	return True;
-};
+}
 
 template<FSize SizeBytes, typename TypeRhs>
 inline FBool operator==(
@@ -100,7 +119,7 @@ inline FBool operator==(
 	)
 {
 	return (Rhs == Lhs);
-};
+}
 
 template<FSize SizeBytes, typename TypeLhs>
 FBool operator!=(
@@ -109,7 +128,7 @@ FBool operator!=(
 	)
 {
 	FSize Index, End;
-	const FRaw* PtrLhs;
+	const FRaw *PtrLhs;
 
 	PtrLhs = (FRaw *) &Lhs;
 	End = Min(SizeBytes, sizeof(TypeLhs));
@@ -121,7 +140,7 @@ FBool operator!=(
 		}
 	}
 	return True;
-};
+}
 
 template<FSize SizeBytes, typename TypeRhs>
 inline FBool operator!=(
@@ -130,7 +149,7 @@ inline FBool operator!=(
 	)
 {
 	return (Rhs != Lhs);
-};
+}
 
 template<FSize SizeBytes>
 FBool operator!(
@@ -147,4 +166,4 @@ FBool operator!(
 		}
 	}
 	return True;
-};
+}

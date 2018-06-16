@@ -9,70 +9,61 @@ namespace LVQ
 	struct FParameters
 	{
 		FReal Alpha;
+		FBool UseClassIndexAsLabel;
 	};
 
 	class CLVQ1 : public TModel<8, 3, FParameters>
 	{
 	public:
-
-		struct FState
+		struct FPrototype
 		{
-			TSequence<FFeature> Prototypes;
+			FSize Class;
+			FFeature Feature;
+			FLabel Label;
+		};
+		
+		struct FNeighbour
+		{
+			FReal Distance;
+			FFeature Direction;
+			FPrototype &Prototype;
 		};
 
-		FState *State;
+		FPrototype NullPrototype = {0};
+		TSequence<FPrototype> Prototypes;
+		FNeighbour Neighbour = {0, {0}, NullPrototype};
 
-		CLVQ1(
-				FVoid
-			);
-
-		~CLVQ1(
-				FVoid
-			);
-
-		virtual FVoid Train(
-				TIterator<FSample> Samples,
-				FParameters Parameters
+	protected:
+		virtual FVoid _Initialize(
+				const FParameters &Parameters
 			) override;
 
-		virtual FVoid Use(
-				TIterator<FFeature> Features,
-				TData<FLabel> &Labels,
-				FParameters Parameters
+		virtual FVoid _Use(
+				const FFeature &,
+				FLabel &,
+				const FParameters &
 			) override;
 
-		virtual FVoid Validate(
-				TIterator<FSample> Samples,
-				FPerformence &Performance,
-				FParameters Parameters
-			) override;
-
-		virtual FVoid Optimize(
-				TIterator<FSample> Samples,
-				FParameters Parameters
-			) override;
-
-		virtual FVoid Optimize(
-				FParameters Parameters
-			) override;
-
-	private:
-
-		FVoid _Use(
-				const FFeature,
-				FLabel &
-			);
-
-		FVoid _Train(
+		virtual FVoid _Train(
 				const FLabel &, 
 				const FLabel &, 
-				FReal
-			);
+				const FParameters &
+			) override;
 
-		FVoid _Validate(
+		virtual FVoid _Validate(
 				const FLabel &,
 				const FLabel &,
-				FPerformence &
-			);
+				FPerformence &,
+				const FParameters &
+			) override;
+
+		virtual FVoid _Optimize(
+				const FSample &,
+				const FParameters &
+			) override;
+
+		virtual FVoid _Optimize(
+				const FParameters &
+			) override;
 	};
 }

@@ -23,7 +23,7 @@ struct TPoint
 		)
 	{
 		return SizeData;
-	};
+	}
 
 
 	inline FSize Size(
@@ -31,7 +31,21 @@ struct TPoint
 		) const
 	{
 		return SizeData;
-	};
+	}
+
+	inline TypeElement & operator[](
+			FSize Index
+		)
+	{
+		return Data[Index];
+	}
+
+	inline const TypeElement & operator[](
+			FSize Index
+		) const
+	{
+		return Data[Index];
+	}
 
 	template<FSize SizeLhs, typename TypeLhs>
 	operator TPoint<SizeLhs, TypeLhs>(
@@ -47,7 +61,7 @@ struct TPoint
 			Lhs.Data[Index] = static_cast<TypeLhs>(Data[Index]);
 		}	
 		return Lhs;
-	};
+	}
 
 	template<typename TypeLhs>
 	inline operator TPoint2D<TypeLhs>(
@@ -58,7 +72,7 @@ struct TPoint
 		
 		Lhs.Point = *this;
 		return Lhs;
-	};
+	}
 
 	template<typename TypeLhs>
 	inline operator TPoint3D<TypeLhs>(
@@ -69,7 +83,7 @@ struct TPoint
 		
 		Lhs.Point = *this;
 		return Lhs;
-	};
+	}
 
 	template<typename TypeLhs>
 	inline operator TPoint4D<TypeLhs>(
@@ -80,7 +94,7 @@ struct TPoint
 		
 		Lhs.Point = *this;
 		return Lhs;
-	};
+	}
 };
 
 template<typename TypeElement>

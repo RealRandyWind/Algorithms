@@ -10,7 +10,7 @@ inline Type Max(
 	)
 {
 	return (Lhs < Rhs ? Rhs : Lhs);
-};
+}
 
 template<typename Type>
 inline Type Min(
@@ -19,7 +19,7 @@ inline Type Min(
 	)
 {
 	return (Lhs < Rhs ? Lhs : Rhs);
-};
+}
 
 template<typename Type>
 inline Type Swap(
@@ -33,7 +33,7 @@ inline Type Swap(
 	Lhs = Rhs;
 	Rhs = Tmp;
 	return Lhs;
-};
+}
 
 template<typename Type>
 inline Type * Make(
@@ -48,7 +48,7 @@ inline Type * Make(
 		exit(EXIT_FAILURE);
 	}
 	return Rhs;
-};
+}
 
 template<typename Type>
 inline Type * Resize(
@@ -62,7 +62,7 @@ inline Type * Resize(
 		exit(EXIT_FAILURE);
 	}
 	return Rhs;
-};
+}
 
 template<typename Type>
 inline Type * Remove(
@@ -71,4 +71,4 @@ inline Type * Remove(
 {
 	free(Data);
 	return NullPtr;
-};
+}

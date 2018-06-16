@@ -10,56 +10,15 @@ template<typename TypeElement>
 struct TSequence;
 
 template<typename TypeElement>
-struct TSequence
+struct TSequence : TIterator<TypeElement>
 {
-	using FIterator = TIterator<TypeElement>;
-
-	FSize _Size, _BufferSize;
-	TypeElement *Data;
-
-	inline FSize Size(
-			FVoid
-		)
-	{
-		return _Size;
-	};
-
-	inline FSize Size(
-			FVoid
-		) const
-	{
-		return _Size;
-	};
-
-	inline FSize BufferSize(
-			FVoid
-		)
-	{
-		return _BufferSize;
-	};
-
-	inline FSize BufferSize(
-			FVoid
-		) const
-	{
-		return _BufferSize;
-	};
-
-	FVoid Reserve(
-			FSize ReserveSize
-		)
-	{
-		_BufferSize = ReserveSize;
-		Data = Resize(Data, _BufferSize);
-	};
-
 	TSequence(
 			FVoid
 		)
 	{
 		_Size = _BufferSize = 0;
 		Data = NullPtr;
-	};
+	}
 
 	TSequence(
 			FSize ReserveSize
@@ -68,7 +27,7 @@ struct TSequence
 		_Size = 0;
 		_BufferSize = ReserveSize;
 		Data = Make<TypeElement>(_BufferSize);
-	};
+	}
 
 	template<typename TypeRhs>
 	TSequence(
@@ -82,7 +41,53 @@ struct TSequence
 			++_Size;
 		}
 		_BufferSize = _Size;
-	};
+	}
+
+	TSequence(
+			const TSequence &Rhs
+		)
+	{
+		FSize Index;
+
+		_BufferSize = Rhs._BufferSize;
+		_Size = Rhs._Size;
+		Data = Make<TypeElement>(_BufferSize);
+		for(Index = 0; Index < _Size; ++Index)
+		{
+			Data[Index] = Rhs.Data[Index];
+		}
+	}
+	
+	TSequence(
+			TSequence &&Rhs
+		)
+	{
+		_BufferSize = Rhs._BufferSize;
+		_Size = Rhs._Size;
+		Data = Rhs.Data;
+		Rhs._BufferSize = Rhs._Size = 0;
+		Rhs.Data = NullPtr;
+	}
+
+	~TSequence(
+			FVoid
+		)
+	{
+		if (Data)
+		{
+			Remove(Data);
+			Data = NullPtr;
+			_Size = _BufferSize = 0;
+		}
+	}
+
+	FVoid Reserve(
+			FSize ReserveSize
+		)
+	{
+		_BufferSize = ReserveSize;
+		Data = Resize(Data, _BufferSize);
+	}
 
 	template<typename TypeLhs>
 	operator TSequence<TypeLhs>(
@@ -99,16 +104,5 @@ struct TSequence
 			Lhs.Data[Index] = static_cast<TypeLhs>(Data[Index]);
 		}	
 		return Lhs;
-	};
-
-	FIterator Iterator(
-			FVoid
-		)
-	{
-		FIterator It;
-		
-		It._Size = _Size;
-		It.Data = &Data[0];
-		return It;
-	};
+	}
 };

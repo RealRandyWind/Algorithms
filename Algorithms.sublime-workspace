@@ -4,12 +4,92 @@
 		"selected_items":
 		[
 			[
-				"_",
-				"_SizeBuffer"
+				"Raw",
+				"RawSizeOut"
 			],
 			[
 				"Type",
-				"TypePoint"
+				"TypeLhs"
+			],
+			[
+				"Lo",
+				"LogStream"
+			],
+			[
+				"Si",
+				"SizeBytes"
+			],
+			[
+				"Size",
+				"sizeof"
+			],
+			[
+				"El",
+				"ElementSize"
+			],
+			[
+				"RAW",
+				"RawElementSize"
+			],
+			[
+				"Rese",
+				"Reserve"
+			],
+			[
+				"Siz",
+				"SizeBytes"
+			],
+			[
+				"File",
+				"FilePath"
+			],
+			[
+				"Ty",
+				"TypeData"
+			],
+			[
+				"_",
+				"_BufferSize"
+			],
+			[
+				"Pa",
+				"Pair"
+			],
+			[
+				"LV",
+				"LVQ1"
+			],
+			[
+				"F",
+				"FSample"
+			],
+			[
+				"Fea",
+				"Feature"
+			],
+			[
+				"Fe",
+				"Feature"
+			],
+			[
+				"Sam",
+				"Sample"
+			],
+			[
+				"Samp",
+				"Samples"
+			],
+			[
+				"_S",
+				"_SizeBuffer"
+			],
+			[
+				"ITer",
+				"IteratorSize"
+			],
+			[
+				"Ite",
+				"IteratorSize"
 			],
 			[
 				"TPoin",
@@ -18,10 +98,6 @@
 			[
 				"TI",
 				"TIterator"
-			],
-			[
-				"F",
-				"FSize"
 			],
 			[
 				"Typ",
@@ -80,10 +156,6 @@
 				"LabelCount"
 			],
 			[
-				"Fea",
-				"FeatureCount"
-			],
-			[
 				"FTri",
 				"FTriangles"
 			],
@@ -92,16 +164,8 @@
 				"EXIT_SUCCESS"
 			],
 			[
-				"Ty",
-				"TypeArguments"
-			],
-			[
 				"inc",
 				"include"
-			],
-			[
-				"Size",
-				"SizeLabel"
 			],
 			[
 				"Validat",
@@ -450,81 +514,53 @@
 			[
 				"nulls",
 				"nullstr"
-			],
-			[
-				"s",
-				"string_t"
-			],
-			[
-				"szie",
-				"size_t"
-			],
-			[
-				"string",
-				"string_t"
-			],
-			[
-				"byte",
-				"byte_t"
-			],
-			[
-				"tiff",
-				"tiff_value"
-			],
-			[
-				"file",
-				"field"
-			],
-			[
-				"enum",
-				"enum_t"
-			],
-			[
-				"TO",
-				"TIFF_ORDER_II"
-			],
-			[
-				"_nex",
-				"_next"
-			],
-			[
-				"Tpe",
-				"TypeLhs"
-			],
-			[
-				"bt",
-				"byte_t"
-			],
-			[
-				"int",
-				"integer"
-			],
-			[
-				"boo",
-				"boolean_t"
-			],
-			[
-				"fie",
-				"field"
-			],
-			[
-				"b",
-				"byte_t"
-			],
-			[
-				"prin",
-				"printf\tprintf …"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "Core/Iterator.hpp",
+			"settings":
+			{
+				"buffer_size": 755,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LVQPrototyping/LVQModel.cpp",
+			"settings":
+			{
+				"buffer_size": 663,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "LVQPrototyping/LVQPrototyping.cpp",
 			"settings":
 			{
-				"buffer_size": 291,
+				"buffer_size": 1073,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LVQPrototyping/LVQResult.Features",
+			"settings":
+			{
+				"buffer_size": 20,
+				"encoding": "Hexadecimal",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LVQPrototyping/LVQResult.Labels",
+			"settings":
+			{
+				"buffer_size": 20,
+				"encoding": "Hexadecimal",
 				"line_ending": "Windows"
 			}
 		},
@@ -532,16 +568,7 @@
 			"file": "LVQPrototyping/LVQModel.hpp",
 			"settings":
 			{
-				"buffer_size": 804,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Core/Byte.hpp",
-			"settings":
-			{
-				"buffer_size": 2175,
+				"buffer_size": 848,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -550,44 +577,52 @@
 			"file": "Core/Data.hpp",
 			"settings":
 			{
-				"buffer_size": 1360,
+				"buffer_size": 3250,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Core/String.hpp",
+			"file": "Core/Byte.hpp",
 			"settings":
 			{
-				"buffer_size": 1918,
+				"buffer_size": 2612,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Biosamples Cryovail Storage Box Dim\n29 x 29 x 32 cm\nIncl. 4 Ice Packs\n51.08 h @43 C°\n\n3d\n92h\n\n\nBiosamples Cryovail Storage Box\n29 x 29 x 32 cm\nInc. 4 Ice Packs\n51.08 h @43 C°\n\nCase A\nsingel box 5.798 kg times 5 a total of (28.990 kg - 29.00 kg)\nrespectivly (€275.39 - €275.39)\n\nCase B\nsingel box 6.110 kg times 3 a total of (18.330 kg - 19.00 kg)\nrespectivly (€175.78 - €203.43)\n\nSend on Monday it will arrive on Thursday. expect about (92h)\nonly working days.\n\nUniversity Medical Center Groningen\nAccount\n955923986\nGerrit Drent\n\n\nCall 0880552888\nTarnsport within day single person will do, 3000 - 4000\n\n",
+			"file": "Core/Types.hpp",
 			"settings":
 			{
-				"buffer_size": 604,
-				"line_ending": "Windows",
-				"name": "Biosamples Cryovail Storage Box Dim"
+				"buffer_size": 1217,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Adobe® Creative Cloud™ Student and Teacher Edition 4197-9M34-16G2-D493-L2AR-M47J\nAdobe® Creative Cloud™ Student and Teacher Edition T55W-ZJ4K-597Z-JRD4-940Q-8572\nAdobe® Creative Cloud™ Student and Teacher Edition 3493-YD54-6D7I-4T27-DLH2-3364\nAdobe® Creative Cloud™ Student and Teacher Edition 05H5-40KS-473E-V37I-F841-CTBB",
+			"file": "Core/Functions.hpp",
 			"settings":
 			{
-				"buffer_size": 323,
-				"line_ending": "Windows",
-				"name": "Adobe® Creative Cloud™ Student and Teacher Edition"
+				"buffer_size": 884,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "a8ea-2a32b01C8d37",
+			"file": "Core/Model.hpp",
 			"settings":
 			{
-				"buffer_size": 17,
-				"line_ending": "Windows",
-				"name": "a8ea-2a32b01C8d37"
+				"buffer_size": 2597,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\t\tByte<4> RawElementSize;\n\t\tByte<4> RawDataSize;\n\t\tByte<sizeof(TypeData)> RawElement;\n\n\t\tRawElementSize = sizeof(TypeData);\n\t\tRawDataSize = _Data.Size();\n\t\t\n\t\tOut << RawElementSize;\n\t\tOut << RawDataSize;",
+			"settings":
+			{
+				"buffer_size": 203,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -631,26 +666,35 @@
 		"/D/Repositories/Algorithms/Core",
 		"/D/Repositories/Algorithms/Core/Formats",
 		"/D/Repositories/Algorithms/LVQPrototyping",
-		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC",
-		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping",
-		"/D/Repositories/Algorithms/TinyAgentHiveMind"
+		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping"
 	],
 	"file_history":
 	[
-		"/D/Repositories/Algorithms/Core/Types.hpp",
-		"/D/Repositories/Algorithms/Core/Functions.hpp",
-		"/D/Repositories/Algorithms/Core/String.hpp",
-		"/D/Repositories/Algorithms/Core/Byte.hpp",
-		"/D/Repositories/Algorithms/Core/Formats/Default.hpp",
-		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel.hpp",
-		"/D/Repositories/Algorithms/Core/Iterator.hpp",
-		"/D/Repositories/Algorithms/LVQPrototyping/LVQPrototyping.cpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/Test",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQResult.Labels",
 		"/D/Repositories/Algorithms/Core/Data.hpp",
+		"/D/Repositories/Algorithms/Core/Model.hpp",
+		"/C/Users/Gebruiker/Desktop/TempRoot/OpenCLAndGLAppleRejection",
+		"/D/Repositories/Algorithms/Core/Sequence.hpp",
+		"/D/Repositories/Algorithms/.gitignore",
+		"/D/Repositories/Algorithms/Core/Types.hpp",
+		"/D/Repositories/Algorithms/Core/Byte.hpp",
 		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel.cpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQPrototyping.cpp",
+		"/D/Repositories/Algorithms/Core/Iterator.hpp",
+		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel.hpp",
+		"/D/Repositories/Algorithms/Core/String.hpp",
+		"/D/Repositories/Algorithms/Core/Point.hpp",
+		"/D/Repositories/Algorithms/CellTypeExtraction/CellTypeExtraction.cpp",
+		"/D/Repositories/Algorithms/Core/Procedure.hpp",
+		"/D/Repositories/Algorithms/TinyAgentHiveMind/TinyAgentHiveMind.cpp",
+		"/D/Repositories/Algorithms/Core/Formats/Default",
+		"/D/Repositories/Algorithms/Core/Formats/OpenCL",
+		"/D/Repositories/Algorithms/Core/Functions.hpp",
+		"/D/Repositories/Algorithms/Core/Formats/Default.hpp",
 		"/D/Repositories/Algorithms/Core/Formats/SDL",
 		"/D/Repositories/Algorithms/Core/Formats/SDL.hpp",
 		"/D/Repositories/Algorithms/Core/Types",
-		"/D/Repositories/Algorithms/Core/Model.hpp",
 		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FScore.c",
 		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FScore.h",
 		"/C/Users/Gebruiker/Desktop/SequenceAlignment/src/FSequence.h",
@@ -671,7 +715,6 @@
 		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffconf.h",
 		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffio.h",
 		"/C/Users/Gebruiker/AppData/Local/Temp/Temp1_libtiff-4.1_only.zip/tiff-4.1/libtiff/tiffio.hxx",
-		"/D/Repositories/Algorithms/Core/Formats/Default",
 		"/D/Repositories/Algorithms/LVQPrototyping/make.bat",
 		"/D/Repositories/Algorithms/mkfrm.bat",
 		"/D/Repositories/Algorithms/mkobj.bat",
@@ -679,14 +722,10 @@
 		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/make.bat",
 		"/D/Repositories/Algorithms/Core/Formats/Tiff",
 		"/D/Repositories/Algorithms/LVQPrototyping/LVQModel",
-		"/D/Repositories/Algorithms/Core/Point.hpp",
-		"/D/Repositories/Algorithms/Core/Procedure.hpp",
-		"/D/Repositories/Algorithms/Core/Sequence.hpp",
 		"/D/Repositories/Algorithms/Core/Point.members.incl",
 		"/D/Repositories/Algorithms/SMLVQDynamicPrototyping/SMLVQDynamicPrototyping.cpp",
 		"/D/Repositories/Algorithms/ProbeMovementOptimizerSSC/ProbeMovementOptimizerSSC.cpp",
 		"/D/Repositories/Algorithms/Core/Sequence",
-		"/D/Repositories/Algorithms/TinyAgentHiveMind/TinyAgentHiveMind.cpp",
 		"/D/Repositories/Algorithms/Core/Format",
 		"/D/Repositories/Algorithms/Core/Byte",
 		"/D/Repositories/Algorithms/Core/Data",
@@ -758,13 +797,7 @@
 		"/C/Users/Gebruiker/Desktop/resolvers.cpp",
 		"/C/Users/Gebruiker/Desktop/atomaton.cpp",
 		"/C/Users/Gebruiker/Desktop/tiffdata.cpp",
-		"/D/Repositories/Algorithms/display",
-		"/D/Repositories/Algorithms/ShapeSampleCoverageOptimizer/ssco.cpp",
-		"/D/Repositories/Algorithms/ShapeSampleCoverageOptimizer/make.bat",
-		"/D/Repositories/Algorithms/math",
-		"/D/Repositories/Algorithms/math.hpp",
-		"/D/Repositories/OperatingSystems/Lab2/vmem.c",
-		"/D/Repositories/MicronML/MicronML_Events.h"
+		"/D/Repositories/Algorithms/display"
 	],
 	"find":
 	{
@@ -775,6 +808,7 @@
 		"height": 104.0,
 		"where_history":
 		[
+			"D:\\Repositories\\Algorithms",
 			""
 		]
 	},
@@ -783,6 +817,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"SizeBuffer",
+			"SizeFature",
+			"CModel",
+			"std::cin",
+			"std::cout",
 			"TOStream",
 			"TIStream",
 			"FSMDLVQ",
@@ -897,6 +936,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"BufferSize",
+			"SizeFeature",
+			"CLVQ1",
+			"InStream",
+			"OutStream",
 			"FOStream",
 			"FIStream",
 			"FModel",
@@ -1002,145 +1046,59 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "LVQPrototyping/LVQPrototyping.cpp",
+					"file": "Core/Iterator.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 291,
+						"buffer_size": 755,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								232,
-								238
+								319,
+								580
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "LVQPrototyping/LVQModel.hpp",
+					"file": "LVQPrototyping/LVQModel.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 804,
+						"buffer_size": 663,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								245,
-								245
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Core/Byte.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2175,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								376,
-								376
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Core/Data.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1360,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								355,
-								355
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Core/String.hpp",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1918,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								58,
+								58
 							]
 						],
 						"settings":
@@ -1154,88 +1112,82 @@
 					},
 					"stack_index": 3,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 5,
+					"buffer": 2,
+					"file": "LVQPrototyping/LVQPrototyping.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 604,
+						"buffer_size": 1073,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								460,
-								95
+								557,
+								557
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Biosamples Cryovail Storage Box Dim",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/C++11/C++11.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 3,
+					"file": "LVQPrototyping/LVQResult.Features",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 323,
+						"buffer_size": 20,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								323,
-								323
+								2,
+								2
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Adobe® Creative Cloud™ Student and Teacher Edition",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 4,
+					"file": "LVQPrototyping/LVQResult.Labels",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17,
+						"buffer_size": 20,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
+								9,
+								9
 							]
 						],
 						"settings":
 						{
-							"auto_name": "a8ea-2a32b01C8d37",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -1244,13 +1196,219 @@
 					},
 					"stack_index": 7,
 					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "LVQPrototyping/LVQModel.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 848,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "Core/Data.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3135,
+								3135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 312.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Core/Byte.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Core/Types.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								665,
+								665
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Core/Functions.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								425,
+								428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Core/Model.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2597,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1523,
+								1523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								203,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -1276,7 +1434,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.515768145101,
 			1.0
 		],
 		"rows":
