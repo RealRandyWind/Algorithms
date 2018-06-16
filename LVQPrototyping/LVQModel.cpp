@@ -42,12 +42,11 @@ FVoid CLVQ1::_Train(
 		const FParameters &Parameters
 	)
 {
-	const FReal One = 1;
-	FSize Class = Neighbour.Prototype.Class;
-
+	const FSize Class = Neighbour.Prototype.Class;
+	const FReal One = 1; 
 	const FReal Delta = Parameters.UseClassIndexAsLabel
 		? Parameters.Alpha * (One - Target[Class] - Label[Class])
-		: Parameters.Alpha * Norm(One - (Target - Label));
+		: Parameters.Alpha * Norm(One - (Target - Label));	
 	
 	Neighbour.Prototype.Feature += (Delta * Neighbour.Direction);
 }
@@ -59,7 +58,7 @@ FVoid CLVQ1::_Validate(
 		const FParameters &Parameters
 	)
 {
-
+	
 }
 
 FVoid CLVQ1::_Optimize(

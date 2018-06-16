@@ -24,6 +24,7 @@ using FBool = bool;
 using FNatural = unsigned int;
 using FInteger = int;
 using FTime = std::chrono::high_resolution_clock::time_point;
+using FDuration = std::chrono::high_resolution_clock::duration;
 using FReturn = decltype(EXIT_SUCCESS);
 using FVoid = void;
 
