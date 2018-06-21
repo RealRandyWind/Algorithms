@@ -1,10 +1,8 @@
 #include <Types>
 #include <LVQModel>
 #include <Data>
-#include <Byte>
-#include <Sequence>
 
-using namespace LVQ;  
+using namespace LVQ;
 
 FReturn main(
 		FVoid
@@ -13,17 +11,17 @@ FReturn main(
 	CLVQ1 LVQ1;
 
 	CLVQ1::FPerformence Performance = {0};
-	CLVQ1::FParameters Parameters = {0.2f, True};
 	
 	TData<CLVQ1::FFeature> Features(L"LVQ.Features.Bin");
 	TData<CLVQ1::FLabel> Targets(L"LVQ.Targets.Bin"), Labels;
 	auto Samples = LVQ1.Pair(Features, Targets);
 
-	LVQ1.Initialize(Parameters);
-	LVQ1.Train(Samples, Parameters);
-	LVQ1.Validate(Samples, Performance, Parameters);
-	LVQ1.Use(Features, Labels, Parameters);
-	LVQ1.Optimize(Parameters);
+	LVQ1.Parameters = {0.2f, 1, 3, True};
+	LVQ1.Initialize();
+	LVQ1.Train(Samples);
+	LVQ1.Validate(Samples, Performance);
+	LVQ1.Use(Features, Labels);
+	LVQ1.Optimize();
 
 	Labels.Save(L"LVQ.Labels.Bin");
 	return Success;

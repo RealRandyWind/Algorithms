@@ -6,15 +6,16 @@
 
 namespace LVQ
 {
-	struct FParameters
-	{
-		FReal Alpha;
-		FBool UseClassIndexAsLabel;
-	};
-
-	class CLVQ1 : public TModel<8, 3, FParameters>
+	class CLVQ1 : public TModel<8, 3>
 	{
 	public:
+		struct FParameters
+		{
+			FReal LearningRate;
+			FSize KNearest, NPrototypes;
+			FBool UseClassIndexAsLabel;
+		};
+
 		struct FPrototype
 		{
 			FSize Class;
@@ -24,46 +25,45 @@ namespace LVQ
 		
 		struct FNeighbour
 		{
-			FReal Distance;
+			FReal Distance2;
 			FFeature Direction;
 			FPrototype &Prototype;
 		};
 
+		struct FState
+		{
+			FSize NeighbourIndex;
+			TSequence<FPrototype> Prototypes;
+			TSequence<FNeighbour> Neighbours;
+		};
+
 		FPrototype NullPrototype = {0};
-		TSequence<FPrototype> Prototypes;
-		FNeighbour Neighbour = {0, {0}, NullPrototype};
+		FNeighbour NullNeighbour = {0, {0}, NullPrototype};
+		
+		FParameters Parameters;
+		FState State;
 
 	protected:
 		virtual FVoid _Initialize(
-				const FParameters &Parameters
+				FVoid
 			) override;
 
 		virtual FVoid _Use(
 				const FFeature &,
-				FLabel &,
-				const FParameters &
+				FLabel &
 			) override;
 
 		virtual FVoid _Train(
-				const FLabel &, 
-				const FLabel &, 
-				const FParameters &
-			) override;
-
-		virtual FVoid _Validate(
 				const FLabel &,
-				const FLabel &,
-				FPerformence &,
-				const FParameters &
+				const FLabel &
 			) override;
 
 		virtual FVoid _Optimize(
-				const FSample &,
-				const FParameters &
+				const FSample &
 			) override;
 
 		virtual FVoid _Optimize(
-				const FParameters &
+				FVoid
 			) override;
 	};
 }

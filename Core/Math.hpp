@@ -2,6 +2,7 @@
 
 #include <math>
 #include <Point>
+#include <Functions>
 
 /* Functions */
 
@@ -30,6 +31,38 @@ Type Norm(
 	return sqrt(Norm2(Rhs));
 }
 
+template<FSize Size, typename Type>
+TPoint<Size, Type> Min(
+		const TPoint<Size, Type> &Lhs,
+		const TPoint<Size, Type> &Rhs
+	)
+{
+	FSize Index;
+	TPoint<Size, Type> Result;
+
+	for (Index = 0; Index < Size; ++Index)
+	{
+		Result[Index] = Min(Lhs[Index], Rhs[Index]);
+	}
+	return Result;
+}
+
+template<FSize Size, typename Type>
+TPoint<Size, Type> Max(
+		const TPoint<Size, Type> &Lhs,
+		const TPoint<Size, Type> &Rhs
+	)
+{
+	FSize Index;
+	TPoint<Size, Type> Result;
+
+	for (Index = 0; Index < Size; ++Index)
+	{
+		Result[Index] = Max(Lhs[Index], Rhs[Index]);
+	}
+	return Result;
+}
+
 /* Vector @ Vector */
 
 template<FSize Size, typename Type>
@@ -39,7 +72,7 @@ TPoint<Size, Type> operator-(
 	)
 {
 	FSize Index;
-	TPoint<Size, Type> Result = {0};
+	TPoint<Size, Type> Result;
 
 	for (Index = 0; Index < Size; ++Index)
 	{
@@ -51,7 +84,7 @@ TPoint<Size, Type> operator-(
 /* Vector @= Vector */
 
 template<FSize Size, typename Type>
-TPoint<Size, Type> & operator+=(
+TPoint<Size, Type> &operator+=(
 		TPoint<Size, Type> &Lhs,
 		const TPoint<Size, Type> &Rhs
 	)
@@ -74,7 +107,7 @@ TPoint<Size, Type> operator*(
 	)
 {
 	FSize Index;
-	TPoint<Size, Type> Result = {0};
+	TPoint<Size, Type> Result;
 
 	for (Index = 0; Index < Size; ++Index)
 	{
@@ -90,7 +123,7 @@ TPoint<Size, Type> operator-(
 	)
 {
 	FSize Index;
-	TPoint<Size, Type> Result = {0};
+	TPoint<Size, Type> Result;
 
 	for (Index = 0; Index < Size; ++Index)
 	{
@@ -101,4 +134,35 @@ TPoint<Size, Type> operator-(
 
 /* Vector @ Alpha */
 
+template<FSize Size, typename Type>
+TPoint<Size, Type> operator*(
+		const TPoint<Size, Type> &Lhs,
+		const Type &Rhs
+	)
+{
+	FSize Index;
+	TPoint<Size, Type> Result;
+
+	for (Index = 0; Index < Size; ++Index)
+	{
+		Result[Index] = Rhs * Lhs[Index];
+	}
+	return Result;
+}
+
 /* Vector @= Alpha */
+
+template<FSize Size, typename Type>
+TPoint<Size, Type> &operator*=(
+		TPoint<Size, Type> &Lhs,
+		const Type &Rhs
+	)
+{
+	FSize Index;
+
+	for (Index = 0; Index < Size; ++Index)
+	{
+		Lhs[Index] *= Rhs;
+	}
+	return Lhs;
+}

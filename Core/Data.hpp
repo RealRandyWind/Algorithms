@@ -104,7 +104,7 @@ struct TData : public TIterator<TypeData>
 		File.Close();
 	}
 
-	friend FOStream & operator<<(
+	friend FOStream &operator<<(
 			FOStream &Out,
 			TData<TypeData> &Rhs
 		)
@@ -126,7 +126,7 @@ struct TData : public TIterator<TypeData>
 		return Out;
 	}
 
-	friend FIStream & operator>>(
+	friend FIStream &operator>>(
 			FIStream &In,
 			TData<TypeData> &Rhs
 		)

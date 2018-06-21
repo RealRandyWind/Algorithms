@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Types>
-#include <String>
 
 template<typename TypeElement>
 struct TIterator;
@@ -42,42 +41,42 @@ struct TIterator
 		return _BufferSize;
 	}
 
-	TypeElement * begin(
+	TypeElement *begin(
 			FVoid
 		)
 	{
 		return &Data[0];
 	}
 
-	TypeElement * begin(
+	TypeElement *begin(
 			FVoid
 		) const
 	{
 		return &Data[0];
 	}
 
-	TypeElement * end(
+	TypeElement *end(
 			FVoid
 		)
 	{
 		return &Data[_Size];
 	}
 
-	TypeElement * end(
+	TypeElement *end(
 			FVoid
 		) const
 	{
 		return &Data[_Size];
 	}
 
-	inline TypeElement & operator[](
+	inline TypeElement &operator[](
 			FSize Index
 		)
 	{
 		return Data[Index];
 	}
 
-	inline const TypeElement & operator[](
+	inline const TypeElement &operator[](
 			FSize Index
 		) const
 	{

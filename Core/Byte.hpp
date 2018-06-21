@@ -25,7 +25,7 @@ struct TByte
 		return SizeBytes;
 	}
 
-	friend FIStream & operator>>(
+	friend FIStream &operator>>(
 			FIStream &In,
 			TByte<SizeBytes> &Rhs
 		)
@@ -36,7 +36,7 @@ struct TByte
 		return In;
 	}
 
-	friend FOStream & operator<<(
+	friend FOStream &operator<<(
 			FOStream &Out,
 			const TByte<SizeBytes> &Rhs
 		)
@@ -70,7 +70,7 @@ struct TByte
 	}
 
 	template<typename TypeRhs>
-	TByte<SizeBytes> & operator=(
+	TByte<SizeBytes> &operator=(
 			const TypeRhs &Rhs
 		)
 	{

@@ -6,7 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <initializer_list>
-#include<chrono>
+#include <chrono>
 
 template<typename TypeElement>
 using TListInitializer = std::initializer_list<TypeElement>;
@@ -29,7 +29,7 @@ using FReturn = decltype(EXIT_SUCCESS);
 using FVoid = void;
 
 static const decltype(L"") NullStr = L"";
-static const decltype('\0') NullChr = '\0';
+static const decltype(L'\0') NullChr = L'\0';
 static const decltype(true) True = true;
 static const decltype(false) False = false;
 static const decltype(nullptr) NullPtr = nullptr;

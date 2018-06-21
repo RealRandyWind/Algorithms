@@ -5,13 +5,12 @@
 #include <Iterator>
 #include <Data>
 
-template<FSize SizeFeature, FSize SizeLabel, typename TypeParameters>
+template<FSize SizeFeature, FSize SizeLabel>
 struct TModel;
 
-template<FSize SizeFeature, FSize SizeLabel, typename TypeParameters>
+template<FSize SizeFeature, FSize SizeLabel>
 struct TModel
 {
-	using FParameters = TypeParameters;
 	using FFeature = TPoint<SizeFeature, FReal>;
 	using FLabel = TPoint<SizeLabel, FReal>;
 	
@@ -23,10 +22,10 @@ struct TModel
 
 	struct FPerformence
 	{
-		FLabel ErrorMean, ErrorSD, ErrorSkew;
-		FReal Error, ErrorTypeII, ErrorTypeI, ErrorGeneralization;
+		FLabel ErrorMin, ErrorMax, ErrorMean, ErrorSD, ErrorSkew;
+		FSize ComplexOperations, SimpleOperations, MemoryReads, MemoryWrites;
+		FSize N, NThreads;
 		FDuration RunningTime;
-		FSize ComplexOperations, SimpleOperations, N;
 	};
 
 	inline FSize FeatureSize(
@@ -79,37 +78,35 @@ struct TModel
 	}
 
 	FVoid Initialize(
-			const FParameters Parameters
+			FVoid
 		)
 	{
-		_Initialize(Parameters);
+		_Initialize();
 	}
 
 	FVoid Train(
-			TIterator<FSample> Samples,
-			const FParameters Parameters
+			TIterator<FSample> Samples
 		)
 	{
 		FLabel Label;
 
 		for (const auto &Sample : Samples)
 		{
-			_Use(Sample.Feature, Label, Parameters);
-			_Train(Label, Sample.Label, Parameters);
+			_Use(Sample.Feature, Label);
+			_Train(Label, Sample.Label);
 		}
 	}
 
 	FVoid Use(
 			TIterator<FFeature> Features,
-			TData<FLabel> &Labels,
-			const FParameters Parameters
+			TData<FLabel> &Labels
 		)
 	{
 		FSize N = 0;
 		Labels.Reserve(Features.Size());
 		for (const auto &Feature : Features)
 		{
-			_Use(Feature, Labels[N], Parameters);
+			_Use(Feature, Labels[N]);
 			++N;
 		}
 		Labels._Size = N;
@@ -117,67 +114,63 @@ struct TModel
 
 	FVoid Validate(
 			TIterator<FSample> Samples,
-			FPerformence &Performance,
-			const FParameters Parameters
+			FPerformence &Performance
 		)
 	{
 		FLabel Label;
+		/*
+		FTime Time;
+		*/
+
 		for (const auto &Sample : Samples)
 		{
-			++Performance.N;
-			_Use(Sample.Feature, Label, Parameters);
-			_Validate(Label, Sample.Label, Performance, Parameters);
+			/*
+			Time = FTime::Now();
+			*/
+			_Use(Sample.Feature, Label);
+			/*
+			Performance.RunningTime += FTime::Now() - Time;
+			*/
 		}
 	}
 
 	FVoid Optimize(
-			TIterator<FSample> Samples,
-			const FParameters Parameters
+			TIterator<FSample> Samples
 		)
 	{
 		for (const auto &Sample : Samples)
 		{
-			_Optimize(Sample, Parameters);
+			_Optimize(Sample);
 		}
 	}
 
 	FVoid Optimize(
-			const FParameters Parameters
+			FVoid
 		)
 	{
-		_Optimize(Parameters);
+		_Optimize();
 	}
 
 protected:
 	virtual FVoid _Initialize(
-				const FParameters &Parameters
+				FVoid
 			) = 0;
 
 	virtual FVoid _Use(
 			const FFeature &,
-			FLabel &,
-			const FParameters &
+			FLabel &
 		) = 0;
 
 	virtual FVoid _Train(
-			const FLabel &, 
-			const FLabel &, 
-			const FParameters &
-		) = 0;
-
-	virtual FVoid _Validate(
 			const FLabel &,
-			const FLabel &,
-			FPerformence &,
-			const FParameters &
+			const FLabel &
 		) = 0;
 
 	virtual FVoid _Optimize(
-			const FSample &,
-			const FParameters &
+			const FSample &
 		) = 0;
 
 	virtual FVoid _Optimize(
-			const FParameters &
+			FVoid
 		) = 0;
 };

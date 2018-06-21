@@ -33,14 +33,14 @@ struct TPoint
 		return SizeData;
 	}
 
-	inline TypeElement & operator[](
+	inline TypeElement &operator[](
 			FSize Index
 		)
 	{
 		return Data[Index];
 	}
 
-	inline const TypeElement & operator[](
+	inline const TypeElement &operator[](
 			FSize Index
 		) const
 	{
