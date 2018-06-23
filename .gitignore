@@ -34,3 +34,7 @@
 # Custom
 .vscode
 *_Driver
+_Local
+Bin
+*.code-workspace
+*.sublime-project
