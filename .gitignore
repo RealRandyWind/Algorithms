@@ -35,7 +35,6 @@
 .vscode
 *_Driver
 _Local
-Bin
 *.code-workspace
-*.sublime-project
 *.sublime-workspace
+*.sublime-project
