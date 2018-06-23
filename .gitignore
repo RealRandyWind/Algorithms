@@ -38,3 +38,4 @@ _Local
 Bin
 *.code-workspace
 *.sublime-project
+*.sublime-workspace
