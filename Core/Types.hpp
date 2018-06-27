@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string.h> /*<String>*/
+#include <string.h>
 #include <cstdlib>
 #include <cstdint>
 #include <iostream>
@@ -15,7 +15,6 @@ using FIStream = std::istream;
 using FOStream = std::ostream;
 
 using FString = std::wstring;
-using FEnum = uint16_t;
 using FRaw = uint8_t;
 using FPointer = void *;
 using FReal = float;

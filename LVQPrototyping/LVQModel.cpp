@@ -10,20 +10,17 @@ FVoid CLVQ1::_Initialize(
 		FVoid
 	)
 {
-	State.NeighbourIndex = 0;
 	State.Prototypes.Reserve(Parameters.NPrototypes);
 	State.Neighbours.Reserve(Parameters.KNearest);
 	
-	for (auto &Prototype : State.Prototypes)
+	for (auto &Prototype : State.Prototypes.Buffer())
 	{
 		Prototype = {0};
 	}
 
-	for (auto &Neighbour : State.Neighbours)
+	for (auto &Neighbour : State.Neighbours.Buffer())
 	{
-		Neighbour.Distance2 = 0;
-		Neighbour.Direction = {0};
-		Neighbour.Prototype = NullPrototype;
+		Neighbour = {0};
 	}
 }
 
@@ -37,24 +34,21 @@ FVoid CLVQ1::_Use(
 	const FReal One = 1;
 	const FReal OneByKNearest = One / Parameters.KNearest;
 
-	for (const auto &Prototype : State.Prototypes)
+	for (auto &Prototype : State.Prototypes)
 	{
 		Direction =  Prototype.Feature - Feature;
 		Distance2 = Norm2(Direction);
-		auto &Neighbour = State.Neighbours[State.NeighbourIndex];
-		if(Distance2 > Neighbour.Distance2)
+
+		if(Distance2 > State.Neighbours.Active().Distance2)
 		{
-			++State.NeighbourIndex;
-			Neighbour.Direction = Direction;
-			Neighbour.Distance2 = Distance2;
-			Neighbour.Prototype = Prototype;
+			State.Neighbours.Swap({Distance2, Direction, &Prototype});
 		}
 	}
 
 	Label = {0};
 	for (const auto &Neighbour : State.Neighbours)
 	{
-		Label += State.Neighbours[State.NeighbourIndex].Prototype.Label;
+		Label += Neighbour.Prototype->Label;
 	}
 	Label *= OneByKNearest;
 }
@@ -71,12 +65,12 @@ FVoid CLVQ1::_Train(
 
 	for(auto &Neighbour : State.Neighbours)
 	{
-		Class = Neighbour.Prototype.Class;
+		Class = Neighbour.Prototype->Class;
 		Delta = Parameters.UseClassIndexAsLabel
 			? LearningRate * (One - Target[Class] - Label[Class])
 			: LearningRate * Norm(One - (Target - Label));	
 		
-		Neighbour.Prototype.Feature += (Delta * Neighbour.Direction);
+		Neighbour.Prototype->Feature += (Delta * Neighbour.Direction);
 	}
 }
 

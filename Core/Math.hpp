@@ -1,8 +1,43 @@
 #pragma once
 
 #include <math>
+#include <limits>
 #include <Point>
 #include <Functions>
+
+/* Definitions */
+
+template<typename Type>
+struct FLimit
+{
+	static Type Max(
+			FVoid
+		)
+	{
+		return std::numeric_limits<Type>::max();
+	}
+
+	static Type Min(
+			FVoid
+		)
+	{
+		return std::numeric_limits<Type>::min();
+	}
+
+	static Type Epsilon(
+			FVoid
+		)
+	{
+		return std::numeric_limits<Type>::epsilon();
+	}
+
+	static Type Infinity(
+			FVoid
+		)
+	{
+		return std::numeric_limits<Type>::infinity();
+	}
+};
 
 /* Functions */
 

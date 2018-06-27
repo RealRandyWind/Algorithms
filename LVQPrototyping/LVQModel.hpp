@@ -27,18 +27,14 @@ namespace LVQ
 		{
 			FReal Distance2;
 			FFeature Direction;
-			FPrototype &Prototype;
+			FPrototype *Prototype;
 		};
 
 		struct FState
 		{
-			FSize NeighbourIndex;
 			TSequence<FPrototype> Prototypes;
 			TSequence<FNeighbour> Neighbours;
 		};
-
-		FPrototype NullPrototype = {0};
-		FNeighbour NullNeighbour = {0, {0}, NullPrototype};
 		
 		FParameters Parameters;
 		FState State;

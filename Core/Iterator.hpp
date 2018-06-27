@@ -8,11 +8,11 @@ struct TIterator;
 template<typename TypeElement>
 struct TIterator
 {
-	FSize _Size, _BufferSize;
-	TypeElement *Data;
-
 	using FIterator = TIterator<TypeElement>;
 
+	FSize _Size, _BufferSize, _Index, _ActiveIndex;
+	TypeElement *Data, *Current;
+
 	inline FSize Size(
 			FVoid
 		)
@@ -41,32 +41,68 @@ struct TIterator
 		return _BufferSize;
 	}
 
-	TypeElement *begin(
+	FIterator Undefined(
 			FVoid
 		)
 	{
-		return &Data[0];
+		FIterator It;
+
+		It._Index = 0;
+		It.Data = It.Current = &Data[_Size];
+		It._Size = _BufferSize - _Size;
+		It._BufferSize = It._Size;
+		
+		return It;
 	}
 
-	TypeElement *begin(
-			FVoid
-		) const
-	{
-		return &Data[0];
-	}
-
-	TypeElement *end(
+	FIterator Buffer(
 			FVoid
 		)
 	{
-		return &Data[_Size];
+		FIterator It;
+		
+		It._Index = 0;
+		It.Data = It.Current = &Data[0];
+		It._Size = It._BufferSize = _BufferSize;
+		return It;
 	}
 
-	TypeElement *end(
+	FVoid Add(
+			TypeElement Rhs
+		)
+	{
+		Data[_Size] = Rhs;
+		++_Size;
+	}
+
+	FVoid Swap(
+			TypeElement Rhs
+		)
+	{
+		if(_Size < _BufferSize)
+		{
+			++_Size;
+		}
+		++_ActiveIndex;
+		if(_ActiveIndex >= _BufferSize)
+		{
+			_ActiveIndex = 0;
+		}
+		Data[_ActiveIndex] = Rhs;
+	}
+
+	TypeElement &Active(
+			FVoid
+		)
+	{
+		return Data[_ActiveIndex];
+	}
+
+	const TypeElement &Active(
 			FVoid
 		) const
 	{
-		return &Data[_Size];
+		return Data[_ActiveIndex];
 	}
 
 	inline TypeElement &operator[](
@@ -81,5 +117,33 @@ struct TIterator
 		) const
 	{
 		return Data[Index];
+	}
+
+	TypeElement *begin(
+			FVoid
+		)
+	{
+		return &Data[0];
+	}
+
+	TypeElement *begin(
+			FVoid
+		) const
+	{
+		return &Data[0];
+	}
+
+	TypeElement *end(
+			FVoid
+		)
+	{
+		return &Data[_Size];
+	}
+
+	TypeElement *end(
+			FVoid
+		) const
+	{
+		return &Data[_Size];
 	}
 };
