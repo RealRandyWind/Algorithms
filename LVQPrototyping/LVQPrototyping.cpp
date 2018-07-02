@@ -1,20 +1,21 @@
 #include <Types>
-#include <LVQModel>
+#include <LVQ1>
 #include <Data>
 
 using namespace LVQ;
+
+using FLVQ1 = TLVQ1<8,3>;
 
 FReturn main(
 		FVoid
 	)
 {
-	CLVQ1 LVQ1;
-
-	CLVQ1::FPerformence Performance = {0};
+	FLVQ1 LVQ1;
 	
+	FLVQ1::FPerformence Performance = {0};
 	
-	TData<CLVQ1::FFeature> Features(L"LVQ.Features.F8.Bin");
-	TData<CLVQ1::FLabel> Targets(L"LVQ.Targets.L3.Bin"), Labels;
+	TData<FLVQ1::FFeature> Features(L"LVQ.Features.F8.Bin");
+	TData<FLVQ1::FLabel> Targets(L"LVQ.Targets.L3.Bin"), Labels;
 	
 	auto Samples = LVQ1.Pair(Features, Targets);
 

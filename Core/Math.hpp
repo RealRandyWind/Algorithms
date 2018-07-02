@@ -6,9 +6,8 @@
 #include <Functions>
 
 /* Definitions */
-
 template<typename Type>
-struct FLimit
+struct TLimit
 {
 	static Type Max(
 			FVoid
