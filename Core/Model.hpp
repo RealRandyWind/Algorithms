@@ -28,6 +28,23 @@ struct TModel
 		FDuration RunningTime;
 	};
 
+	struct _FPairIterator : TIterator<FSample>
+	{
+		TIterator<FFeature> _Features;
+		TIterator<FLabel> _Labels;
+
+		virtual FVoid Cache(
+				FSize Index
+			) override
+		{
+			if(Index == _ActiveIndex)
+			{
+				return;
+			}
+			Swap({_Features[Index], _Labels[Index]});
+		}
+	};
+
 	inline FSize FeatureSize(
 			FVoid
 		)
@@ -43,15 +60,19 @@ struct TModel
 	}
 
 	TIterator<FSample> Pair(
-			TIterator<FFeature>,
-			TIterator<FLabel>
+			TIterator<FFeature> &Features,
+			TIterator<FLabel> &Labels,
+			FSize ReserveSize = 1
 		)
 	{
-		TIterator<FSample> It;
+		_FPairIterator It;
 
-		It.Data = NullPtr;
-		It._Size = 0;
-
+		It._Features = Features;
+		It._Labels = Labels;
+		It._BufferSize = ReserveSize;
+		It._DestroyData = True;
+		It._Size = Min(Features.Size(), Labels.Size());
+		It.Data = Make<FSample>(It._BufferSize);
 		return It;
 	}
 

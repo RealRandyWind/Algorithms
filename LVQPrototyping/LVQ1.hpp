@@ -5,6 +5,8 @@
 #include <Sequence>
 #include <Math>
 
+using namespace Math;
+
 namespace LVQ
 {
 	template<FSize SizeFeature, FSize SizeLabel>
@@ -50,14 +52,16 @@ namespace LVQ
 		{
 			State.Prototypes.Reserve(Parameters.NPrototypes);
 			State.Neighbours.Reserve(Parameters.KNearest);
-			
+			OutStream << "Initializing...\n";
 			for (auto &Prototype : State.Prototypes.Buffer())
 			{
+				OutStream << " Prototype\n";
 				Prototype = {0};
 			}
 
 			for (auto &Neighbour : State.Neighbours.Buffer())
 			{
+				OutStream << " Neighbour\n";
 				Neighbour = {0};
 			}
 		}

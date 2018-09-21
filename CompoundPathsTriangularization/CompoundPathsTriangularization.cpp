@@ -1,3 +1,8 @@
+#include <Types>
+#include <Sequence>
+#include <Point>
+#include <Data>
+
 using FPoint = TPoint<2, FReal>;
 using FTriangle = TPoint<6, FReal>;
 

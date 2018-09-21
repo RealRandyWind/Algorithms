@@ -14,7 +14,7 @@ using TListInitializer = std::initializer_list<TypeElement>;
 using FIStream = std::istream;
 using FOStream = std::ostream;
 
-using FString = std::wstring;
+using FString = std::string;
 using FRaw = uint8_t;
 using FPointer = void *;
 using FReal = float;
@@ -27,18 +27,19 @@ using FDuration = std::chrono::high_resolution_clock::duration;
 using FReturn = decltype(EXIT_SUCCESS);
 using FVoid = void;
 
-static const decltype(L"") NullStr = L"";
-static const decltype(L'\0') NullChr = L'\0';
+#define Null NULL
+static const decltype("") NullStr = "";
+static const decltype('\0') NullChr = '\0';
 static const decltype(true) True = true;
 static const decltype(false) False = false;
 static const decltype(nullptr) NullPtr = nullptr;
 static const decltype(EXIT_SUCCESS) Success = EXIT_SUCCESS;
 static const decltype(EXIT_FAILURE) Failure = EXIT_FAILURE;
 
-static decltype(std::wcin) &InStream = std::wcin;
-static decltype(std::wcout) &OutStream = std::wcout;
-static decltype(std::wcerr) &ErrorStream = std::wcerr;
-static decltype(std::wclog) &LogStream = std::wclog;
+static decltype(std::cin) &InStream = std::cin;
+static decltype(std::cout) &OutStream = std::cout;
+static decltype(std::cerr) &ErrorStream = std::cerr;
+static decltype(std::clog) &LogStream = std::clog;
 
 struct FFStream : std::fstream
 {

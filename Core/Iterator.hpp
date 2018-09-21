@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Types>
+#include <Functions>
 
 template<typename TypeElement>
 struct TIterator;
@@ -10,8 +11,40 @@ struct TIterator
 {
 	using FIterator = TIterator<TypeElement>;
 
-	FSize _Size, _BufferSize, _Index, _ActiveIndex;
-	TypeElement *Data, *Current;
+	FBool _DestroyData;
+	FSize _Size, _BufferSize;
+	FSize _Index, _BufferIndex, _ActiveIndex;
+	TypeElement *Data;
+
+	TIterator(
+			FVoid
+		)
+	{
+		_DestroyData = False;
+		_Size = _BufferSize = 0;
+		_Index = _ActiveIndex = 0;
+		_BufferIndex = 1;
+		Data = NullPtr;
+	}
+
+	TIterator(
+			FSize ReserveSize
+		) : TIterator()
+	{
+		_DestroyData = True;
+		_BufferIndex = ReserveSize;
+		Reserve();
+	}
+
+	~TIterator(
+				FVoid
+			)
+	{
+		if (_DestroyData && !Data)
+		{
+			Remove(Data);
+		}
+	}
 
 	inline FSize Size(
 			FVoid
@@ -48,10 +81,9 @@ struct TIterator
 		FIterator It;
 
 		It._Index = 0;
-		It.Data = It.Current = &Data[_Size];
-		It._Size = _BufferSize - _Size;
+		It.Data = &Data[_BufferIndex];
+		It._Size = _BufferSize - _BufferIndex;
 		It._BufferSize = It._Size;
-		
 		return It;
 	}
 
@@ -62,17 +94,17 @@ struct TIterator
 		FIterator It;
 		
 		It._Index = 0;
-		It.Data = It.Current = &Data[0];
+		It.Data = &Data[0];
 		It._Size = It._BufferSize = _BufferSize;
 		return It;
 	}
 
-	FVoid Add(
-			TypeElement Rhs
+	FVoid Reserve(
+			FSize ReserveSize
 		)
 	{
-		Data[_Size] = Rhs;
-		++_Size;
+		_BufferSize = ReserveSize;
+		Data = Make<TypeElement>(_BufferSize);
 	}
 
 	FVoid Swap(
@@ -83,11 +115,12 @@ struct TIterator
 		{
 			++_Size;
 		}
-		++_ActiveIndex;
-		if(_ActiveIndex >= _BufferSize)
+		++_BufferIndex;
+		if(_BufferIndex >= _BufferSize)
 		{
-			_ActiveIndex = 0;
+			_BufferIndex = 0;
 		}
+		_ActiveIndex = _BufferIndex;
 		Data[_ActiveIndex] = Rhs;
 	}
 
@@ -105,45 +138,109 @@ struct TIterator
 		return Data[_ActiveIndex];
 	}
 
-	inline TypeElement &operator[](
+	FVoid Reset(
+			FVoid
+		)
+	{
+		_Index = _ActiveIndex = _BufferIndex = 0;
+	}
+
+	TypeElement &operator[](
 			FSize Index
 		)
 	{
-		return Data[Index];
+		Cache(Index);
+		return Data[_ActiveIndex];
 	}
 
-	inline const TypeElement &operator[](
+	const TypeElement &operator[](
 			FSize Index
 		) const
 	{
-		return Data[Index];
+		Cache(Index);
+		return Data[_ActiveIndex];
 	}
 
-	TypeElement *begin(
+	TypeElement& operator*(
 			FVoid
 		)
 	{
-		return &Data[0];
+		Cache(_Index);
+		return Data[_ActiveIndex];
 	}
 
-	TypeElement *begin(
+	const TypeElement& operator*(
 			FVoid
 		) const
 	{
-		return &Data[0];
+		Cache(_Index);
+		return Data[_ActiveIndex];
 	}
 
-	TypeElement *end(
+	FIterator &operator++(
 			FVoid
 		)
 	{
-		return &Data[_Size];
+		++_Index;
+		return *this;
 	}
 
-	TypeElement *end(
+	FIterator &begin(
+			FVoid
+		)
+	{
+		return *this;
+	}
+
+	FIterator &end(
+
+		)
+	{
+		return *this;
+	}
+
+	const FIterator &begin(
 			FVoid
 		) const
 	{
-		return &Data[_Size];
+		return *this;
+	}
+
+	const FIterator &end(
+
+		) const
+	{
+		return *this;
+	}
+
+	FBool operator!=(
+			const FIterator &Rhs
+		) const
+	{
+		return _Size != _Index;
+	}
+
+	virtual FVoid Cache(
+			FSize Index
+		)
+	{
+		if (Index == _ActiveIndex)
+		{
+			return;
+		}
+
+		if (Index >= _BufferSize)
+		{
+			_BufferSize = Index + 1;
+			Data = Resize(Data, _BufferSize);
+		}
+
+		if (Index >= _BufferIndex)
+		{
+			_BufferIndex = Index;
+		}
+
+		_ActiveIndex = Index;
 	}
 };
+

@@ -20,15 +20,6 @@ struct TData : public TIterator<TypeData>
 	}
 
 	TData(
-			FSize ReserveSize
-		)
-	{
-		_Size = 0;
-		_BufferSize = ReserveSize;
-		Data = Make<TypeData>(_BufferSize);
-	}
-
-	TData(
 			FString Path,
 			FBool IsBinary = True
 		) : TData()
@@ -72,14 +63,6 @@ struct TData : public TIterator<TypeData>
 			Data = NullPtr;
 			_Size = _BufferSize = 0;
 		}
-	}
-
-	FVoid Reserve(
-			FSize ReserveSize
-		)
-	{
-		_BufferSize = ReserveSize;
-		Data = Resize(Data, _BufferSize);
 	}
 
 	FVoid Save(

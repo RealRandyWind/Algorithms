@@ -17,7 +17,7 @@ struct TSequence : public TIterator<TypeElement>
 		)
 	{
 		_Size = _BufferSize = 0;
-		Data = Current = NullPtr;
+		Data = NullPtr;
 	}
 
 	TSequence(
@@ -26,7 +26,7 @@ struct TSequence : public TIterator<TypeElement>
 	{
 		_Size = 0;
 		_BufferSize = ReserveSize;
-		Data = Current = Make<TypeElement>(_BufferSize);
+		Data = Make<TypeElement>(_BufferSize);
 	}
 
 	template<typename TypeRhs>
@@ -34,7 +34,7 @@ struct TSequence : public TIterator<TypeElement>
 			TListInitializer<TypeRhs> List
 		) : TSequence()
 	{
-		Data = Current = Make<TypeElement>(List.size());
+		Data = Make<TypeElement>(List.size());
 		for (auto Value : List)
 		{
 			Data[_Size] = static_cast<TypeElement>(Value);
@@ -51,7 +51,7 @@ struct TSequence : public TIterator<TypeElement>
 
 		_BufferSize = Rhs._BufferSize;
 		_Size = Rhs._Size;
-		Data = Current = Make<TypeElement>(_BufferSize);
+		Data = Make<TypeElement>(_BufferSize);
 		for(Index = 0; Index < _Size; ++Index)
 		{
 			Data[Index] = Rhs.Data[Index];
@@ -64,7 +64,7 @@ struct TSequence : public TIterator<TypeElement>
 	{
 		_BufferSize = Rhs._BufferSize;
 		_Size = Rhs._Size;
-		Data = Current = Rhs.Data;
+		Data = Rhs.Data;
 		Rhs._BufferSize = Rhs._Size = 0;
 		Rhs.Data = NullPtr;
 	}
@@ -76,17 +76,9 @@ struct TSequence : public TIterator<TypeElement>
 		if (Data)
 		{
 			Remove(Data);
-			Data = Current = NullPtr;
+			Data = NullPtr;
 			_Size = _BufferSize = 0;
 		}
-	}
-
-	FVoid Reserve(
-			FSize ReserveSize
-		)
-	{
-		_BufferSize = ReserveSize;
-		Data = Resize(Data, _BufferSize);
 	}
 
 	template<typename TypeLhs>

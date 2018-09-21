@@ -11,6 +11,8 @@ template<typename TypeElement>
 struct TPoint3D;
 template<typename TypeElement>
 struct TPoint4D;
+template<typename TypeElement>
+struct TColor;
 
 
 template<FSize SizeData, typename TypeElement>
@@ -95,6 +97,17 @@ struct TPoint
 		Lhs.Point = *this;
 		return Lhs;
 	}
+
+	template<typename TypeLhs>
+	inline operator TColor<TypeLhs>(
+			FVoid
+		) const
+	{
+		TColor<TypeLhs> Lhs;
+		
+		Lhs.Point = *this;
+		return Lhs;
+	}
 };
 
 template<typename TypeElement>
@@ -136,6 +149,21 @@ struct TPoint4D
 		struct
 		{
 			TypeElement X, Y, Z, W;
+		};
+	};
+
+	#include "Point.members.incl"
+};
+
+template<typename TypeElement>
+struct TColor
+{
+	union
+	{
+		TPoint<4, TypeElement> Point;
+		struct
+		{
+			TypeElement R, G, B, A;
 		};
 	};
 

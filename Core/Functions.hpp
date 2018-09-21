@@ -35,17 +35,37 @@ inline Type Swap(
 	return Lhs;
 }
 
-template<typename Type>
-inline Type * Make(
-		FSize Size
+inline FVoid * _Make(
+		FSize Bytes
 	)
 {
-	Type *Rhs;
+	FVoid *Rhs;
 
-	Rhs = (Type *) malloc(Size * sizeof(Type));
+	Rhs = (FVoid *) malloc(Bytes);
 	if(!Rhs)
 	{
-		exit(EXIT_FAILURE);
+		exit(Failure);
+	}
+	return Rhs;
+}
+
+template<typename Type>
+inline Type * Make(
+		FSize Size = 1
+	)
+{
+	return (Type *) _Make(Size * sizeof(Type));
+}
+
+inline FVoid * _Resize(
+		FVoid *Rhs,
+		FSize Bytes
+	)
+{
+	Rhs = realloc(Rhs, Bytes);
+	if(!Rhs)
+	{
+		exit(Failure);
 	}
 	return Rhs;
 }
@@ -56,12 +76,15 @@ inline Type * Resize(
 		FSize Size
 	)
 {
-	Rhs = (Type *) realloc(Rhs, Size * sizeof(Type));
-	if(!Rhs)
-	{
-		exit(EXIT_FAILURE);
-	}
-	return Rhs;
+	return (Type *) _Resize(Rhs, Size * sizeof(Type));
+}
+
+inline FVoid * _Remove(
+		FVoid *Data
+	)
+{
+	free(Data);
+	return NullPtr;
 }
 
 template<typename Type>
@@ -69,6 +92,84 @@ inline Type * Remove(
 		Type *Data
 	)
 {
-	free(Data);
-	return NullPtr;
+	return (Type *) _Remove(Data);
+}
+
+inline FVoid * _Copy(
+		FVoid *Lhs,
+		const FVoid *Rhs,
+		FSize Bytes
+	)
+{
+	FRaw *PtrLhs, *PtrRhs;
+	FSize Index, End;
+
+	if (!Rhs)
+	{
+		exit(Failure);
+	}
+
+	if (!Lhs)
+	{
+		Lhs = _Make(Bytes);
+	}
+	
+	PtrLhs = (FRaw *) Lhs;
+	PtrRhs = (FRaw *) Rhs;
+	End = Bytes;
+	for (Index = 0; Index < End; ++Index)
+	{
+		PtrLhs[Index] = PtrRhs[Index];
+	}
+	return Lhs;
+}
+
+template<typename Type>
+inline Type * Copy(
+		Type *Lhs,
+		const Type *Rhs,
+		FSize Size = 1
+	)
+{
+	return (Type *) _Copy(Lhs, Rhs, Size * sizeof(Type));
+}
+
+inline FVoid * _Move(
+		FVoid *Lhs,
+		FVoid *Rhs,
+		FSize Bytes
+	)
+{
+	FRaw *PtrLhs, *PtrRhs;
+	FSize Index, End;
+
+	if (!Rhs)
+	{
+		exit(Failure);
+	}
+
+	if (!Lhs)
+	{
+		Lhs = _Make(Bytes);
+	}
+
+	PtrLhs = (FRaw *) Lhs;
+	PtrRhs = (FRaw *) Rhs;
+	End = Bytes;
+	for (Index = 0; Index < End; ++Index)
+	{
+		PtrLhs[Index] = PtrRhs[Index];
+		PtrRhs[Index] = 0;
+	}
+	return Lhs;
+}
+
+template<typename Type>
+inline Type * Move(
+		Type *Lhs,
+		Type *Rhs,
+		FSize Size = 1
+	)
+{
+	return (Type *) _Move(Lhs, Rhs, Size * sizeof(Type));
 }
